@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import { clinic, services } from '@/lib/data'
+import { hospital, services } from '@/lib/data'
 import { Menu, X, Phone, Mail, ChevronRight, ChevronDown, MoveRight } from 'lucide-react'
 
 const Navbar = () => {
@@ -41,7 +41,7 @@ const Navbar = () => {
                 <div className="flex items-center gap-6 uppercase">
                     <Link href="/patient-guide" className="hover:opacity-80 transition-opacity tracking-widest">Patient Guide</Link>
                     <Link href="/doctors" className="hover:opacity-80 transition-opacity tracking-widest">Find a Doctor</Link>
-                    <span className="font-semibold">Emergency: <a href={`tel:${clinic.phone}`} className="underline underline-offset-2">{clinic.phoneDisplay}</a></span>
+                    <span className="font-semibold">Emergency: <a href={`tel:${hospital.phone}`} className="underline underline-offset-2">{hospital.phoneDisplay}</a></span>
                 </div>
             </div>
 
@@ -195,14 +195,14 @@ const Navbar = () => {
                                 <Phone className="w-5 h-5 text-red-600" />
                                 <div>
                                     <div className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Emergency Number</div>
-                                    <a href={`tel:${clinic.phone}`} className="text-gray-900 font-semibold">{clinic.phoneDisplay}</a>
+                                    <a href={`tel:${hospital.phone}`} className="text-gray-900 font-semibold">{hospital.phoneDisplay}</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4 p-5 bg-gray-50 rounded-xl border border-gray-100">
                                 <Mail className="w-5 h-5 text-red-600" />
                                 <div>
                                     <div className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Email Address</div>
-                                    <div className="text-gray-900 font-semibold">{clinic.email}</div>
+                                    <div className="text-gray-900 font-semibold">{hospital.email}</div>
                                 </div>
                             </div>
                         </div>

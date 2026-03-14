@@ -4,7 +4,7 @@ import { doctors } from "@/lib/data";
 export const metadata = {
   title: "About Us | Raghuram Medicare, Ghaziabad",
   description:
-    "Learn about Raghuram Medicare, a trusted multispecialty clinic and hospital in Patel Nagar, Ghaziabad. Led by Dr. Mohan Bandhu Gupta and Dr. Shubhra Gupta.",
+    "Learn about Raghuram Medicare, a trusted multispecialty hospital in Patel Nagar, Ghaziabad. Led by Dr. Mohan Bandhu Gupta and Dr. Shubhra Gupta.",
 };
 
 export default function AboutPage() {
@@ -43,10 +43,10 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Raghuram Medicare is a well-established multispecialty clinic and hospital in Patel Nagar, Ghaziabad — a trusted name in the community for quality medical care. We offer a comprehensive range of services spanning chest & respiratory medicine, gynaecology & obstetrics, pathology diagnostics, infertility treatment, and advanced procedures such as bronchoscopy and pulmonary function testing.
+                  Raghuram Medicare is a well-established multispecialty hospital in Patel Nagar, Ghaziabad — a trusted name in the community for quality medical care. We offer a comprehensive range of services spanning chest & respiratory medicine, gynaecology & obstetrics, pathology diagnostics, infertility treatment, and advanced procedures such as bronchoscopy and pulmonary function testing.
                 </p>
                 <p>
-                  Our facility is led by two senior specialists — Dr. Mohan Bandhu Gupta, a highly respected Chest Physician & Pulmonologist, and Dr. Shubhra Gupta, an experienced Gynaecologist & Obstetrician. Together, they bring decades of academic training and hands-on clinical expertise from some of India&apos;s most prestigious institutions.
+                  Our facility is led by two senior specialists — Dr. Mohan Bandhu Gupta, a highly respected Chest Physician & Pulmonologist, and Dr. Shubhra Gupta, an experienced Gynaecologist & Obstetrician. Together, they bring decades of academic training and hands-on medical expertise from some of India&apos;s most prestigious institutions.
                 </p>
                 <p>
                   At Raghuram Medicare, we believe that every patient deserves timely, accurate diagnosis and personalised treatment in a warm and supportive environment. Whether it is a routine consultation, a diagnostic investigation, or a surgical procedure, our team is here to guide you every step of the way.

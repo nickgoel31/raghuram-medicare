@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { clinic } from '@/lib/data'
+import { hospital } from '@/lib/data'
 
 interface ContactFormData {
   name: string
@@ -13,7 +13,7 @@ interface ContactFormData {
 }
 
 const faqs: { q: string; a: string }[] = [
-  { q: 'How do I schedule an appointment?', a: `You can book online through our appointment page, call us at ${clinic.phoneDisplay}, or email ${clinic.email}. We confirm within 24 hours.` },
+  { q: 'How do I schedule an appointment?', a: `You can book online through our appointment page, call us at ${hospital.phoneDisplay}, or email ${hospital.email}. We confirm within 24 hours.` },
   { q: 'What should I bring to my first appointment?', a: 'Please bring a valid ID, health insurance documents if applicable, a list of current medications, and any previous medical reports related to your condition.' },
   { q: 'How long does a consultation take?', a: 'Initial consultations typically take 30–45 minutes. Follow-up appointments are usually 15–20 minutes, varying based on your condition and progress.' },
   { q: 'Do you accept health insurance?', a: 'We work with most major health insurance providers. Contact us before your appointment to confirm your specific coverage details.' },
@@ -22,10 +22,10 @@ const faqs: { q: string; a: string }[] = [
 ]
 
 const contactDetails: { icon: string; label: string; value: string; sub: string }[] = [
-  { icon: '📞', label: 'Phone', value: clinic.phoneDisplay, sub: 'Available 24×7 for emergencies' },
-  { icon: '✉️', label: 'Email', value: clinic.email, sub: 'We respond within 24 hours' },
-  { icon: '📍', label: 'Address', value: clinic.addressShort, sub: 'Uttar Pradesh, India' },
-  { icon: '🕐', label: 'Hours', value: clinic.hours.weekdays, sub: clinic.hours.saturday },
+  { icon: '📞', label: 'Phone', value: hospital.phoneDisplay, sub: 'Available 24×7 for emergencies' },
+  { icon: '✉️', label: 'Email', value: hospital.email, sub: 'We respond within 24 hours' },
+  { icon: '📍', label: 'Address', value: hospital.addressShort, sub: 'Uttar Pradesh, India' },
+  { icon: '🕐', label: 'Hours', value: hospital.hours.weekdays, sub: hospital.hours.saturday },
 ]
 
 const inputClass = 'w-full px-4 py-3.5 border border-gray-200 rounded-xl bg-gray-50 text-gray-700 text-sm placeholder-gray-400 focus:outline-none focus:border-red-500 focus:bg-white focus:shadow-[0_0_0_3px_rgba(220,38,38,0.1)] transition-all duration-300'
@@ -129,7 +129,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className={labelClass}>Phone Number <span className="text-gray-400 font-normal normal-case tracking-normal">(Optional)</span></label>
-                  <input className={inputClass} type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder={clinic.phoneDisplay} />
+                  <input className={inputClass} type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder={hospital.phoneDisplay} />
                 </div>
                 <div>
                   <label className={labelClass}>Subject *</label>
@@ -174,13 +174,13 @@ export default function Contact() {
               </div>
               <h3 className="font-[family-name:var(--font-playfair)] text-3xl text-white font-medium mb-4">Experiencing <span className="text-red-500">Acute Symptoms?</span></h3>
               <p className="text-white/60 text-sm leading-relaxed mb-8">
-                For urgent health concerns or emergencies, don&apos;t wait — call us directly on {clinic.phoneDisplay} or visit our clinic. We prioritize critical cases.
+                For urgent health concerns or emergencies, don&apos;t wait — call us directly on {hospital.phoneDisplay} or visit our hospital. We prioritize critical cases.
               </p>
               <Link
-                href={`tel:${clinic.phone}`}
+                href={`tel:${hospital.phone}`}
                 className="inline-block md:block w-full py-3.5 bg-red-600 text-white text-center text-xs font-bold tracking-[0.15em] uppercase rounded-xl hover:bg-red-700 transition-all duration-300 shadow-lg shadow-red-600/20"
               >
-                Call Emergency: {clinic.phoneDisplay}
+                Call Emergency: {hospital.phoneDisplay}
               </Link>
             </div>
           </div>

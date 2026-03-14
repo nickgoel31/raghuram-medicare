@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { doctors, clinic, testimonials as realTestimonials, services as realServices } from '@/lib/data'
+import { doctors, hospital, testimonials as realTestimonials, services as realServices } from '@/lib/data'
 
 const features: { icon: string; title: string; desc: string }[] = [
   { icon: '⚕️', title: 'Board Certified Specialists', desc: 'Expert doctors with credentials from India\'s top medical institutions.' },

@@ -1,6 +1,6 @@
 'use client'
 
-import { clinic } from '@/lib/data'
+import { hospital } from '@/lib/data'
 
 export default function PrivacyPolicy() {
   return (
@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
 
             <section>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-medium text-gray-900 mb-4">2. Information Collection</h2>
-              <p className="leading-relaxed">We collect information provided by you during registration, appointment booking, and clinical consultations. This may include:</p>
+              <p className="leading-relaxed">We collect information provided by you during registration, appointment booking, and hospital consultations. This may include:</p>
               <ul className="list-disc pl-6 mt-4 space-y-2">
                 <li>Personal identifiers (Name, Age, Gender, Contact Details)</li>
                 <li>Medical history and clinical notes</li>
@@ -44,12 +44,12 @@ export default function PrivacyPolicy() {
 
             <section>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-medium text-gray-900 mb-4">3. Use of Information</h2>
-              <p className="leading-relaxed">Your information is used solely for medical diagnosis, treatment planning, billing, and clinical communication. We do not sell or share your personal data with third parties for marketing purposes.</p>
+              <p className="leading-relaxed">Your information is used solely for medical diagnosis, treatment planning, billing, and hospital communication. We do not sell or share your personal data with third parties for marketing purposes.</p>
             </section>
 
             <section>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-medium text-gray-900 mb-4">4. Data Security</h2>
-              <p className="leading-relaxed">We implement appropriate technical and organizational measures to secure your digital and physical records. Access to medical data is restricted to authorized clinical and administrative staff only.</p>
+              <p className="leading-relaxed">We implement appropriate technical and organizational measures to secure your digital and physical records. Access to medical data is restricted to authorized hospital and administrative staff only.</p>
             </section>
 
             <section>
@@ -61,10 +61,10 @@ export default function PrivacyPolicy() {
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-medium text-gray-900 mb-4">6. Contact Us</h2>
               <p className="leading-relaxed">If you have any questions regarding this policy or your data privacy, please contact us at:</p>
               <div className="mt-4 p-6 bg-gray-50 rounded-xl border border-gray-100">
-                <p className="font-bold text-gray-900">{clinic.name}</p>
-                <p>{clinic.address}</p>
-                <p>Email: {clinic.email}</p>
-                <p>Phone: {clinic.phoneDisplay}</p>
+                <p className="font-bold text-gray-900">{hospital.name}</p>
+                <p>{hospital.address}</p>
+                <p>Email: {hospital.email}</p>
+                <p>Phone: {hospital.phoneDisplay}</p>
               </div>
             </section>
           </div>

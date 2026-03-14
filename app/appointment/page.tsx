@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { clinic } from '@/lib/data'
+import { hospital } from '@/lib/data'
 
 interface FormData {
   fullName: string
@@ -194,10 +194,10 @@ export default function Appointment() {
               <h3 className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-gray-900 mb-8 border-b border-gray-100 pb-5">Facility Details</h3>
               <div className="space-y-8">
                 {[
-                  { icon: '📞', label: 'Primary Contact', value: clinic.phoneDisplay, sub: 'Coordination Desk' },
-                  { icon: '✉️', label: 'Email', value: clinic.email, sub: 'Clinical Inquiries' },
-                  { icon: '📍', label: 'Address', value: clinic.addressShort, sub: clinic.address },
-                  { icon: '🕐', label: 'Hours', value: clinic.hours.weekdays, sub: clinic.hours.saturday },
+                  { icon: '📞', label: 'Primary Contact', value: hospital.phoneDisplay, sub: 'Coordination Desk' },
+                  { icon: '✉️', label: 'Email', value: hospital.email, sub: 'Hospital Inquiries' },
+                  { icon: '📍', label: 'Address', value: hospital.addressShort, sub: hospital.address },
+                  { icon: '🕐', label: 'Hours', value: hospital.hours.weekdays, sub: hospital.hours.saturday },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-5 items-start group">
                     <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center text-lg shrink-0 border border-red-100 group-hover:bg-red-100 transition-colors">{item.icon}</div>
@@ -221,10 +221,10 @@ export default function Appointment() {
                 For acute health emergencies, please proceed directly to the facility or call us immediately.
               </p>
               <a
-                href={`tel:${clinic.phone}`}
+                href={`tel:${hospital.phone}`}
                 className="block w-full py-4 bg-red-600 hover:bg-red-700 text-white text-center text-[10px] font-bold tracking-[0.2em] uppercase rounded-xl transition-all duration-300 relative z-10 shadow-lg shadow-red-600/20"
               >
-                Hotline: {clinic.phoneDisplay}
+                Hotline: {hospital.phoneDisplay}
               </a>
             </div>
           </div>

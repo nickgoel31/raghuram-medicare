@@ -28,7 +28,7 @@ export default function PatientGuidePage() {
                         <div className="space-y-4 text-gray-600 leading-relaxed text-sm">
                             <p><strong className="text-gray-800">1. Appointment Booking:</strong> We highly recommend booking an appointment prior to your visit to minimize wait times. Emergency cases are prioritized upon arrival.</p>
                             <p><strong className="text-gray-800">2. Initial Assessment:</strong> Upon arrival, our nursing staff will record your vital signs (SPO2, BP, Temp) and take a brief medical history.</p>
-                            <p><strong className="text-gray-800">3. Specialist Consultation:</strong> The doctor will conduct a thorough clinical examination. Please bring all previous medical records, X-Rays, and current medications.</p>
+                            <p><strong className="text-gray-800">3. Specialist Consultation:</strong> The doctor will conduct a thorough hospital examination. Please bring all previous medical records, X-Rays, and current medications.</p>
                         </div>
                     </div>
 

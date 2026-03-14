@@ -21,13 +21,13 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Raghuram Medicare | Multi-Specialty Healthcare, Ghaziabad",
   description:
-    "Raghuram Medicare — a premier multi-specialty clinic in Patel Nagar, Ghaziabad. Expert care in Pulmonology, Gynaecology, Critical Care & more led by Dr. Mohan Bandhu (MD, FCCS) and Dr. Shubhra Gupta (MBBS, DGO, DMCH).",
+    "Raghuram Medicare — a premier multi-specialty hospital in Patel Nagar, Ghaziabad. Expert care in Pulmonology, Gynaecology, Critical Care & more led by Dr. Mohan Bandhu (MD, FCCS) and Dr. Shubhra Gupta (MBBS, DGO, DMCH).",
   keywords: [
     "raghuram medicare ghaziabad",
     "pulmonology ghaziabad",
     "best doctor ghaziabad",
     "gynaecology ghaziabad",
-    "infertility clinic ghaziabad",
+    "infertility hospital ghaziabad",
   ],
   openGraph: {
     title: "Raghuram Medicare | Multi-Specialty Healthcare, Ghaziabad",

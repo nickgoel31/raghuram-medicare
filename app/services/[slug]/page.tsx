@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { use } from 'react'
-import { services, clinic, doctors, ServiceData } from '@/lib/data'
+import { services, hospital, doctors, ServiceData } from '@/lib/data'
 
 interface PageProps {
     params: Promise<{ slug: string }>
@@ -57,8 +57,8 @@ export default function ServicePage({ params }: PageProps) {
                             <Link href="/appointment" className="bg-red-600 hover:bg-red-700 text-white px-10 py-5 text-xs font-bold tracking-[0.15em] uppercase transition-all duration-300 rounded-lg shadow-lg shadow-red-600/20 hover:-translate-y-0.5">
                                 Consult our Specialist
                             </Link>
-                            <a href={`tel:${clinic.phone}`} className="border border-white/20 hover:border-red-500 text-white hover:text-red-400 px-10 py-5 text-xs font-semibold tracking-[0.15em] uppercase transition-all duration-300 rounded-lg hover:bg-white/5">
-                                Call {clinic.phoneDisplay}
+                            <a href={`tel:${hospital.phone}`} className="border border-white/20 hover:border-red-500 text-white hover:text-red-400 px-10 py-5 text-xs font-semibold tracking-[0.15em] uppercase transition-all duration-300 rounded-lg hover:bg-white/5">
+                                Call {hospital.phoneDisplay}
                             </a>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ export default function ServicePage({ params }: PageProps) {
                         <div className="space-y-4 relative z-10">
                             {[
                                 { label: 'Clinical Experience', val: leadDoctor.experience },
-                                { label: 'Primary Facility', val: clinic.addressShort },
+                                { label: 'Primary Facility', val: hospital.addressShort },
                                 { label: 'Available Days', val: 'Tue – Sun' },
                             ].map(item => (
                                 <div key={item.label} className="flex justify-between items-center py-3 border-b border-white/5 last:border-0">
@@ -105,7 +105,7 @@ export default function ServicePage({ params }: PageProps) {
                     <div>
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-8 h-px bg-red-600" />
-                            <span className="text-red-600 text-[10px] font-bold tracking-[0.25em] uppercase">Clinical Overview</span>
+                            <span className="text-red-600 text-[10px] font-bold tracking-[0.25em] uppercase">Hospital Overview</span>
                         </div>
                         <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-medium text-gray-900 mb-10 leading-tight">
                             Advancing <span className="text-red-600">Patient Outcomes</span>
@@ -155,7 +155,7 @@ export default function ServicePage({ params }: PageProps) {
                             <span className="text-red-600 text-[10px] font-bold tracking-[0.25em] uppercase">Our Methodology</span>
                         </div>
                         <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-medium text-gray-900">
-                            Patient-Centric <span className="text-red-600">Clinical Pathway</span>
+                            Patient-Centric <span className="text-red-600">Hospital Pathway</span>
                         </h2>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -237,7 +237,7 @@ export default function ServicePage({ params }: PageProps) {
                                 <div className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-gray-900 mb-3 group-hover:text-red-600 transition-colors">{s.shortTitle}</div>
                                 <div className="text-gray-400 text-sm mb-6 leading-relaxed line-clamp-2">{s.tagline}</div>
                                 <div className="text-red-600 text-[10px] font-bold tracking-[0.2em] uppercase flex items-center gap-2">
-                                    Clinical Profile <span>→</span>
+                                    Hospital Profile <span>→</span>
                                 </div>
                             </Link>
                         ))}

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { clinic, doctors, services } from '@/lib/data'
+import { hospital, doctors, services } from '@/lib/data'
 
 export default function Services() {
   return (
@@ -16,10 +16,10 @@ export default function Services() {
             <span className="text-red-400 text-[10px] font-bold tracking-[0.25em] uppercase">Departments & Specialties</span>
           </div>
           <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl font-medium text-white leading-[1.1]">
-            Centers of<br /><span className="text-red-500">Clinical Excellence</span>
+            Centers of<br /><span className="text-red-500">Hospital Excellence</span>
           </h1>
           <p className="text-white/60 text-lg mt-6 leading-relaxed max-w-xl mx-auto">
-            Comprehensive hospital-grade clinical services provided by our leading specialists.
+            Comprehensive hospital-grade services provided by our leading specialists.
           </p>
         </div>
       </section>

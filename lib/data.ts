@@ -1,6 +1,6 @@
 // lib/data.ts — Real data for Raghuram Medicare, Ghaziabad
 
-export const clinic = {
+export const hospital = {
     name: 'Raghuram Medicare',
     tagline: 'Expert Chest, Gynaecology & Multi-Speciality Care in Ghaziabad',
     address: 'G-156, Patel Nagar 3rd, Ghaziabad, Uttar Pradesh – 201002',
@@ -146,16 +146,16 @@ export const services: ServiceData[] = [
         icon: '👩‍⚕️',
         tag: 'Women\'s Health',
         shortTitle: 'Gynaecology Services',
-        title: 'Infertility Clinic & Gynaecological Services',
+        title: 'Infertility Hospital & Gynaecological Services',
         tagline: 'Complete Women\'s Health Care by Dr. Shubhra Gupta',
-        heroDesc: 'Comprehensive care covering normal delivery, high-risk pregnancy, surgical procedures, and a dedicated infertility (Baanjhpan) clinic.',
+        heroDesc: 'Comprehensive care covering normal delivery, high-risk pregnancy, surgical procedures, and a dedicated infertility (Baanjhpan) hospital.',
         overview: [
-            'Led by Senior Gynaecologist Dr. Shubhra Gupta, our clinic provides empathetic, confidential, and comprehensive care for women across all stages of life.',
+            'Led by Senior Gynaecologist Dr. Shubhra Gupta, our hospital provides empathetic, confidential, and comprehensive care for women across all stages of life.',
             'We manage everything from routine consultations to high-risk pregnancies, hormonal disorders, advanced gynaecological operations, and dedicated infertility treatments to support your journey to motherhood.'
         ],
         features: [
             'Normal & Caesarean Delivery (Prasav Seva)',
-            'Infertility Treatment (Baanjhpan Clinic)',
+            'Infertility Treatment (Baanjhpan Hospital)',
             'Safe Medical Termination of Pregnancy (MTP)',
             'Nasbandi — Family Planning (Sterilisation)',
             'Gynaecological Operations & Surgeries',
@@ -170,7 +170,7 @@ export const services: ServiceData[] = [
             { step: 'Surgical Procedures', desc: 'Full range of operations including Laparoscopic gynaecological procedures, D&C, and pelvic floor repair.' }
         ],
         faqs: [
-            { q: 'Does the infertility clinic evaluate both partners?', a: 'Yes, our evaluations include hormonal assessments and semen analysis to provide comprehensive counseling and treatment plans.' },
+            { q: 'Does the infertility hospital evaluate both partners?', a: 'Yes, our evaluations include hormonal assessments and semen analysis to provide comprehensive counseling and treatment plans.' },
             { q: 'Are surgical procedures safe?', a: 'All operations are conducted under expert supervision with our advanced surgical infrastructure ensuring patient safety and rapid recovery.' }
         ],
         metaDesc: 'Expert Gynaecology, Obstetrics, and Infertility treatments in Ghaziabad by Dr. Shubhra Gupta at Raghuram Medicare.',

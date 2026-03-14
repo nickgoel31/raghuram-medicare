@@ -53,9 +53,9 @@ export default function InfrastructurePage() {
                         <div className="absolute right-0 bottom-0 w-[400px] h-[400px] bg-red-600/8 rounded-full blur-[100px]" />
                     </div>
                     <div className="relative z-10">
-                        <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-white font-medium mb-6">Committed to Clinical Safety & Hygiene</h2>
+                        <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-white font-medium mb-6">Committed to Hospital Safety & Hygiene</h2>
                         <p className="text-white/60 max-w-2xl mx-auto mb-8">
-                            Our clinic maintains international standards for sterilization and air quality, ensuring a safe environment for highly susceptible respiratory patients.
+                            Our hospital maintains international standards for sterilization and air quality, ensuring a safe environment for highly susceptible respiratory patients.
                         </p>
                         <div className="inline-block border border-red-500/50 text-red-400 px-8 py-3 text-xs font-bold tracking-[0.15em] uppercase rounded-xl hover:bg-red-600/10 transition-colors">
                             ISO Compliant Protocols

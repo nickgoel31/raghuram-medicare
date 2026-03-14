@@ -1,6 +1,6 @@
 'use client'
 
-import { clinic } from '@/lib/data'
+import { hospital } from '@/lib/data'
 
 export default function TermsOfService() {
   return (
@@ -59,7 +59,7 @@ export default function TermsOfService() {
 
             <div className="mt-12 p-8 bg-red-50 border border-red-100 rounded-xl text-center">
               <p className="text-gray-700 mb-4 italic">&quot;Your health and safety are our top priorities.&quot;</p>
-              <p className="font-bold text-gray-900">{clinic.name} Administration</p>
+              <p className="font-bold text-gray-900">{hospital.name} Administration</p>
             </div>
           </div>
         </div>

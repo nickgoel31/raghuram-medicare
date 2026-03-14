@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import { clinic, services } from '@/lib/data'
+import { hospital, services } from '@/lib/data'
 
 export default function Footer() {
     return (
@@ -73,15 +73,15 @@ export default function Footer() {
                         <address className="not-italic space-y-4 text-sm text-gray-400">
                             <div>
                                 <strong className="block text-white mb-1 font-medium">Emergency</strong>
-                                <a href={`tel:${clinic.phone}`} className="hover:text-red-400 transition-colors">{clinic.phoneDisplay}</a>
+                                <a href={`tel:${hospital.phone}`} className="hover:text-red-400 transition-colors">{hospital.phoneDisplay}</a>
                             </div>
                             <div>
-                                <strong className="block text-white mb-1 font-medium">Clinic Address</strong>
-                                {clinic.address}
+                                <strong className="block text-white mb-1 font-medium">Hospital Address</strong>
+                                {hospital.address}
                             </div>
                             <div>
                                 <strong className="block text-white mb-1 font-medium">Hours</strong>
-                                {clinic.hours.weekdays}
+                                {hospital.hours.weekdays}
                             </div>
                         </address>
                     </div>
@@ -90,7 +90,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-gray-500 text-xs text-center md:text-left">
-                        © {new Date().getFullYear()} {clinic.name}. All rights reserved.
+                        © {new Date().getFullYear()} {hospital.name}. All rights reserved.
                     </p>
                     <div className="flex gap-6 text-xs text-gray-500">
                         <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
