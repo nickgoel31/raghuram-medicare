@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { sendEmail } from '@/lib/mail'
+import { clinic } from '@/lib/data'
 
 export async function POST(request: NextRequest) {
   try {
@@ -85,8 +86,8 @@ export async function POST(request: NextRequest) {
 
     // Email to clinic
     await sendEmail({
-      to: process.env.EMAIL_TO || '',
-      subject: `[Appointment] ${service} - ${fullName}`,
+      to: clinic.email,
+      subject: `New Appointment Request: ${service}`,
       text: `New Appointment Request: ${service}\n\nFull Name: ${fullName}\nDate: ${date}\nTime: ${time}\nPhone: ${phone}\nSymptoms: ${symptoms || 'N/A'}`,
       html
     })
