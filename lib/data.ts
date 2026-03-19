@@ -9,7 +9,7 @@ export const hospital = {
     phoneDisplay: '+91 8810242132',
     email: 'drbandhumohan@gmail.com',
     hours: {
-        weekdays: 'Tue – Sun: 9:00 AM – 5:00 PM',
+        weekdays: 'Tue – Sun: 10:00 AM – 8:00 PM',
         saturday: 'Monday: Closed',
         sunday: 'Emergency: Available 24×7 on +91 8810242132',
     },
@@ -27,6 +27,7 @@ export const doctors = [
         registration: '8222',
         phone: '+91 9810747464',
         experience: 'Chest Physician',
+        timings: '10:00 AM – 2:00 PM & 6:00 PM – 8:00 PM',
         photo: 'https://www.shardahospital.org/uploads/doctor/doc_mohan-bandhu-gupta1.jpg',
         bio: [
             'Dr. Mohan Bandhu Gupta is one of the most respected and experienced Chest Physicians in the Delhi-NCR region, with over two decades of dedicated service in respiratory medicine and pulmonology.',
@@ -63,6 +64,7 @@ export const doctors = [
         registration: '039545',
         phone: '+91 9810747454',
         experience: 'Gynaecologist',
+        timings: '10:00 AM – 1:00 PM & 6:30 PM – 7:30 PM',
         photo: '/doctor-2.jpeg',
         bio: [
             'Dr. Shubhra Gupta is a highly qualified and experienced Gynaecologist and Obstetrician. She completed her MBBS followed by a Diploma in Gynaecology & Obstetrics (DGO) from the prestigious King George\'s Medical University (KGMC), Lucknow, and further specialised with a DMCH from Delhi.',
@@ -88,6 +90,7 @@ export const doctors = [
             'Gynaecological Surgeries & Operations'
         ],
     }
+
 ]
 
 export interface ServiceData {
@@ -107,40 +110,6 @@ export interface ServiceData {
 }
 
 export const services: ServiceData[] = [
-    {
-        slug: 'pathology-diagnostics',
-        icon: '🔬',
-        tag: 'Diagnostics',
-        shortTitle: 'Pathology & Diagnostics',
-        title: 'Pathology & Diagnostic Services',
-        tagline: 'Fast, Accurate, Affordable — All Under One Roof',
-        heroDesc: 'Our in-house diagnostic centre offers a comprehensive range of tests conducted using modern, calibrated equipment. All reports are reviewed and interpreted by our specialist doctors.',
-        overview: [
-            'Our in-house diagnostic centre offers a comprehensive range of tests conducted using modern, calibrated equipment. All reports are reviewed and interpreted by our specialist doctors.',
-        ],
-        features: [
-            'X-Ray (Digital Radiography)',
-            'ECG (Electrocardiogram)',
-            'Blood Sugar Test (Glucose Testing)',
-            'Blood Tests (Full Pathology Panel)',
-            'Sputum Examination (Balgam Test)',
-            'Complete Blood Count (CBC / Haemogram)',
-            'Liver & Kidney Function Tests',
-            'Thyroid & Lipid Profiles'
-        ],
-        conditions: ['TB Screening', 'Pneumonia', 'Heart Rhythm Abnormalities', 'Diabetes Mellitus', 'Inflammation Screening'],
-        approach: [
-            { step: 'Digital X-Ray', desc: 'Digital imaging of the chest, abdomen, bones, and joints. Fast results reviewed directly by Dr. Mohan Bandhu Gupta.' },
-            { step: 'ECG', desc: 'A non-invasive, painless test that records the heart\'s electrical activity to detect arrhythmias or cardiac issues.' },
-            { step: 'Blood & Pathology', desc: 'Complete panels including CBC, LFT, KFT, HbA1c, and Vitamin screening within our in-house lab.' },
-            { step: 'Sputum Analysis', desc: 'Microscopic and culture analysis to detect bacterial infections and Tuberculosis (TB/AFB smear).' }
-        ],
-        faqs: [
-            { q: 'Are results available quickly?', a: 'Yes, our in-house facility ensures rapid turnaround times for most routine and diagnostic tests.' },
-            { q: 'Is the lab open daily?', a: 'Testing is available during our standard OPD timings and for emergency cases.' }
-        ],
-        metaDesc: 'Fast and accurate Pathology & Diagnostic Services at Raghuram Medicare, including X-Ray, ECG, Blood Tests, and Sputum Analysis.',
-    },
     {
         slug: 'gynaecology-infertility',
         icon: '👩‍⚕️',
@@ -207,39 +176,8 @@ export const services: ServiceData[] = [
             { q: 'Is Nebulisation effective for sudden attacks?', a: 'Yes, it provides immediate relief by delivering medication directly to the airways during acute asthma or bronchitis episodes.' }
         ],
         metaDesc: 'Advanced Chest, Respiratory & Critical Care Services in Ghaziabad by Dr. Mohan Bandhu Gupta, including Bronchoscopy and PFT.',
-    },
-    {
-        slug: 'hospital-admission-inpatient',
-        icon: '🏥',
-        tag: 'Inpatient Care',
-        shortTitle: 'Hospital Admissions',
-        title: 'Hospital Admission & Inpatient Services',
-        tagline: 'Round-the-clock Care, Monitoring, and Recovery',
-        heroDesc: 'Comprehensive indoor/IPD facilities equipped with 24×7 nursing care, monitoring, and emergency management for complete peace of mind.',
-        overview: [
-            'Raghuram Medicare provides fully-equipped inpatient admission facilities for patients requiring extended monitoring, intravenous treatments, or post-surgical recovery.',
-            'Our dedicated IPD wards ensure patients receive continuous observation, medication, and care from our round-the-clock nursing staff and specialist doctors.'
-        ],
-        features: [
-            'General ward and private room options',
-            '24×7 nursing care and continuous monitoring',
-            'Round-the-clock doctor availability',
-            'Emergency management and stabilisation',
-            'Post-operative recovery and wound care',
-            'ICU-level support & ventilator management (Dr. M. Bandhu Gupta)'
-        ],
-        conditions: ['Post-operative Recovery', 'Acute Respiratory Exacerbations', 'High-Risk Pregnancy Monitoring', 'Critical Medical Emergencies'],
-        approach: [
-            { step: 'Timely Admission (IPD)', desc: 'Seamless transition into comfortable general wards or private rooms depending on patient preference and medical requirement.' },
-            { step: 'Continuous Monitoring', desc: '24×7 supervision by experienced nursing staff, ensuring all vital signs and treatments are meticulously tracked.' },
-            { step: 'Post-Operative & Critical Care', desc: 'Dedicated wound care, recovery protocols, and ICU-level ventilator support for the most critical patients.' }
-        ],
-        faqs: [
-            { q: 'Are private rooms available?', a: 'Yes, we offer both general ward and comfortable private room options for our admitted patients.' },
-            { q: 'Is there a doctor available at night?', a: 'We maintain round-the-clock doctor availability and 24×7 nursing care for all hospitalized patients.' }
-        ],
-        metaDesc: 'Hospital Admission & Inpatient Services providing 24x7 nursing, monitoring, and recovery care at Raghuram Medicare, Ghaziabad.',
     }
+
 ]
 
 export const testimonials = [

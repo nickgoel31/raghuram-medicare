@@ -16,29 +16,26 @@ interface FormData {
 }
 
 const timeSlots: { value: string; label: string }[] = [
-  { value: '09:00', label: '9:00 AM' },
   { value: '10:00', label: '10:00 AM' },
   { value: '11:00', label: '11:00 AM' },
   { value: '12:00', label: '12:00 PM' },
-  { value: '14:00', label: '2:00 PM' },
-  { value: '15:00', label: '3:00 PM' },
-  { value: '16:00', label: '4:00 PM' },
-  { value: '17:00', label: '5:00 PM' },
+  { value: '13:00', label: '01:00 PM' },
+  { value: '18:00', label: '06:00 PM' },
+  { value: '18:30', label: '06:30 PM' },
+  { value: '19:00', label: '07:00 PM' },
+  { value: '19:30', label: '07:30 PM' },
+  { value: '20:00', label: '08:00 PM' },
 ]
 
 const serviceOptions: string[] = [
   'Chest & Respiratory Care',
   'Gynaecology & Obstetrics',
-  'Infertility Treatment',
-  'Pathology & Diagnostics',
-  'Hospital Admission (IPD)',
-  'General Consultation',
 ]
 
 const trustPoints: { icon: string; title: string; desc: string }[] = [
   { icon: '⚕️', title: 'Expert Specialists', desc: 'Board-certified doctors with decades of clinical excellence.' },
   { icon: '⚡', title: 'Fast Confirmation', desc: 'Secure your slot with immediate digital confirmation.' },
-  { icon: '📅', title: 'Flexible Slots', desc: 'Convenient OPD timing: Tue–Sun, 9 AM – 5 PM.' },
+  { icon: '📅', title: 'Flexible Slots', desc: 'Convenient OPD timing: Morning & Evening Sessions.' },
   { icon: '🔒', title: 'Confidential Care', desc: 'Your medical data is encrypted and strictly confidential.' },
 ]
 

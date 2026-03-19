@@ -14,7 +14,7 @@ export default function DoctorsPage() {
                     <div className="inline-flex items-center gap-3 mb-6">
                         <span className="text-red-400 text-[10px] font-bold tracking-[0.25em] uppercase">Our Specialists</span>
                     </div>
-                    <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-6xl font-medium text-white mb-6">
+                    <h1 className="font-(family-name:--font-playfair) text-4xl md:text-6xl font-medium text-white mb-6">
                         Excellence in <span className="text-red-500">Medical Leadership</span>
                     </h1>
                     <p className="text-white/60 text-lg leading-relaxed">
@@ -34,13 +34,17 @@ export default function DoctorsPage() {
                             </div>
                             <div className="p-8 md:p-10 w-full md:w-3/5 flex flex-col justify-center bg-white relative">
                                 <div className="text-red-600 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">{doc.designation}</div>
-                                <h2 className="font-[family-name:var(--font-playfair)] text-3xl text-gray-900 font-medium mb-2">{doc.name}</h2>
+                                <h2 className="font-(family-name:--font-playfair) text-3xl text-gray-900 font-medium mb-2">{doc.name}</h2>
                                 <p className="text-gray-500 text-sm mb-6">{doc.qualifications}</p>
 
                                 <div className="space-y-4 mb-8 text-sm text-gray-600">
                                     <div className="flex items-start gap-3">
                                         <span className="w-2 h-2 rounded-full bg-red-600 mt-1.5 shrink-0" />
                                         <span>{doc.experience}</span>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <span className="w-2 h-2 rounded-full bg-red-600 mt-1.5 shrink-0" />
+                                        <span>Consultation Hours: {(doc as any).timings}</span>
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <span className="w-2 h-2 rounded-full bg-red-600 mt-1.5 shrink-0" />
