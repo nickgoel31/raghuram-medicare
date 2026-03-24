@@ -113,9 +113,6 @@ export default function Services() {
               </div>
             ))}
           </div>
-          <div className="text-center mt-12">
-            <Link href="/infrastructure" className="text-red-400 text-xs font-bold tracking-[0.15em] uppercase hover:text-white transition-colors border-b border-red-500/30 hover:border-white pb-1">Explore Full Infrastructure →</Link>
-          </div>
         </div>
       </section>
 

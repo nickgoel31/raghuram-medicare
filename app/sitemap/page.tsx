@@ -9,7 +9,6 @@ export default function Sitemap() {
     { name: 'About Us', href: '/about' },
     { name: 'Our Doctors', href: '/doctors' },
     { name: 'Our Services', href: '/services' },
-    { name: 'Infrastructure', href: '/infrastructure' },
     { name: 'Patient Guide', href: '/patient-guide' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'Book Appointment', href: '/appointment' },
@@ -31,7 +30,7 @@ export default function Sitemap() {
           <div className="inline-flex items-center gap-3 mb-6">
             <span className="text-red-400 text-[10px] font-bold tracking-[0.25em] uppercase">Navigation Guide</span>
           </div>
-          <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl font-medium text-white leading-[1.1]">
+          <h1 className="font-(family-name:--font-playfair) text-5xl md:text-6xl font-medium text-white leading-[1.1]">
             Site <span className="text-red-500">Map</span>
           </h1>
           <p className="text-white/60 text-lg mt-6 leading-relaxed max-w-lg mx-auto">
@@ -46,7 +45,7 @@ export default function Sitemap() {
           
           {/* Main Pages */}
           <div>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-medium text-gray-900 mb-8 border-b border-gray-100 pb-4">Main Navigation</h2>
+            <h2 className="font-(family-name:--font-playfair) text-3xl font-medium text-gray-900 mb-8 border-b border-gray-100 pb-4">Main Navigation</h2>
             <ul className="space-y-4">
               {mainLinks.map((link) => (
                 <li key={link.href}>
@@ -61,7 +60,7 @@ export default function Sitemap() {
 
           {/* Departments */}
           <div>
-            <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-medium text-gray-900 mb-8 border-b border-gray-100 pb-4">Centers of Excellence</h2>
+            <h2 className="font-(family-name:--font-playfair) text-3xl font-medium text-gray-900 mb-8 border-b border-gray-100 pb-4">Centers of Excellence</h2>
             <ul className="space-y-4">
               {services.map((s) => (
                 <li key={s.slug}>
@@ -77,7 +76,7 @@ export default function Sitemap() {
           {/* Doctors & Legal */}
           <div className="space-y-12">
             <div>
-              <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-medium text-gray-900 mb-8 border-b border-gray-100 pb-4">Our Specialists</h2>
+              <h2 className="font-(family-name:--font-playfair) text-3xl font-medium text-gray-900 mb-8 border-b border-gray-100 pb-4">Our Specialists</h2>
               <ul className="space-y-4">
                 {doctors.map((doc) => (
                   <li key={doc.id} className="text-gray-600 flex items-center gap-3">
@@ -88,7 +87,7 @@ export default function Sitemap() {
               </ul>
             </div>
             <div>
-              <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-medium text-gray-900 mb-8 border-b border-gray-100 pb-4">Legal & Support</h2>
+              <h2 className="font-(family-name:--font-playfair) text-3xl font-medium text-gray-900 mb-8 border-b border-gray-100 pb-4">Legal & Support</h2>
               <ul className="space-y-4">
                 {legalLinks.map((link) => (
                   <li key={link.href}>

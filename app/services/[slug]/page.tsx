@@ -80,13 +80,13 @@ export default function ServicePage({ params }: PageProps) {
                         </div>
                         <div className="space-y-4 relative z-10">
                             {[
-                                { label: 'Clinical Experience', val: leadDoctor.experience },
-                                { label: 'Primary Facility', val: hospital.addressShort },
-                                { label: 'Available Days', val: 'Tue – Sun' },
+                                { label: 'Consultation Hours', val: leadDoctor.timings },
+                                { label: 'Available Days', val: 'Tue – Sun (Mon Closed)' },
+                                { label: 'Facility', val: hospital.addressShort },
                             ].map(item => (
                                 <div key={item.label} className="flex justify-between items-center py-3 border-b border-white/5 last:border-0">
                                     <span className="text-white/30 text-[10px] font-bold tracking-wider uppercase">{item.label}</span>
-                                    <span className="text-white/70 text-xs tracking-wide">{item.val}</span>
+                                    <span className="text-white/70 text-xs tracking-wide text-right ml-4">{item.val}</span>
                                 </div>
                             ))}
                         </div>
@@ -204,8 +204,13 @@ export default function ServicePage({ params }: PageProps) {
                         <img src={leadDoctor.photo} alt={leadDoctor.name} className="w-24 h-24 rounded-2xl object-cover shadow-lg shrink-0" />
                         <div>
                             <div className="font-[family-name:var(--font-playfair)] text-3xl font-medium text-gray-900">{leadDoctor.name}</div>
-                            <p className="text-red-600 text-xs font-bold tracking-widest uppercase mt-1 mb-3">{leadDoctor.designation}</p>
                             <div className="text-gray-500 text-sm leading-relaxed">{leadDoctor.qualifications}</div>
+                            <div className="flex items-center gap-2 mt-4 text-xs font-semibold text-gray-700 bg-gray-100 w-fit px-3 py-1.5 rounded-lg border border-gray-200">
+                                <span className="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse" />
+                                <span>{leadDoctor.timings}</span>
+                                <span className="mx-1 text-gray-300">|</span>
+                                <span>Tue – Sun</span>
+                            </div>
                         </div>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4">

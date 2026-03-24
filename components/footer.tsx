@@ -33,7 +33,7 @@ export default function Footer() {
                             {[1, 2, 3].map((i) => (
                                 <div key={i} className="w-10 h-10 rounded-xl border border-gray-700 flex items-center justify-center text-gray-500 hover:text-red-500 hover:border-red-500/50 hover:bg-red-500/5 transition-all cursor-pointer">
                                     <span className="sr-only">Social Link</span>
-                                    <div className="w-4 h-4 bg-current opacity-80" style={{ clipPath: 'polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%)' }} />
+                                    <div className="w-4 h-4 rounded-full bg-current opacity-60" />
                                 </div>
                             ))}
                         </div>
@@ -43,7 +43,7 @@ export default function Footer() {
                     <div className="lg:col-span-2 lg:col-start-6">
                         <h4 className="text-[10px] tracking-[0.2em] uppercase text-white font-bold mb-6">Explore</h4>
                         <ul className="space-y-3">
-                            {[['Home', '/'], ['About Us', '/about'], ['Our Doctors', '/doctors'], ['Facilities', '/infrastructure'], ['Patient Guide', '/patient-guide'], ['Contact', '/contact']].map(([label, href]) => (
+                            {[['Home', '/'], ['About Us', '/about'], ['Our Doctors', '/doctors'], ['Patient Guide', '/patient-guide'], ['Contact', '/contact']].map(([label, href]) => (
                                 <li key={href}>
                                     <Link href={href} className="text-sm text-gray-400 hover:text-red-400 transition-colors">
                                         {label}
@@ -80,8 +80,22 @@ export default function Footer() {
                                 {hospital.address}
                             </div>
                             <div>
-                                <strong className="block text-white mb-1 font-medium">Hours</strong>
-                                {hospital.hours.weekdays}
+                                <strong className="block text-white mb-2 font-medium">Hospital Hours</strong>
+                                <div className="space-y-3">
+                                    <div>
+                                        <p className="text-white/60 text-[10px] uppercase tracking-wider font-bold mb-1">Dr. M. Bandhu Gupta</p>
+                                        <p className="text-xs">10:00 AM – 2:00 PM</p>
+                                        <p className="text-xs">6:00 PM – 8:00 PM</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-white/60 text-[10px] uppercase tracking-wider font-bold mb-1">Dr. Shubhra Gupta</p>
+                                        <p className="text-xs">10:00 AM – 1:00 PM</p>
+                                        <p className="text-xs">6:30 PM – 7:30 PM</p>
+                                    </div>
+                                    <div className="pt-2 border-t border-gray-800">
+                                        <p className="text-red-400 font-medium">Monday: Closed</p>
+                                    </div>
+                                </div>
                             </div>
                         </address>
                     </div>

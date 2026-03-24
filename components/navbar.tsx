@@ -62,8 +62,7 @@ const Navbar = () => {
                     {[
                         ['Home', '/'],
                         ['About Us', '/about'],
-                        ['Centers of Excellence', '/services'],
-                        ['Infrastructure', '/infrastructure']
+                        ['Centers of Excellence', '/services']
                     ].map(([label, href]) => {
                         const active = pathname === href || (href !== '/' && pathname.startsWith(href as string))
                         const isServices = label === 'Centers of Excellence'
@@ -119,13 +118,6 @@ const Navbar = () => {
                                         World-class multi-speciality healthcare across multiple domains, led by Dr. M. Bandhu & Dr. Shubhra Gupta.
                                     </p>
                                 </div>
-                                <div className="p-4 bg-red-50 border border-red-100 rounded-xl space-y-3">
-                                    <p className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">In-House Diagnostics</p>
-                                    <p className="text-xs text-gray-700 leading-relaxed">Advanced Pulmonary Lab with state-of-the-art Spirometry and DLCO testing equipment.</p>
-                                    <Link href="/infrastructure" className="inline-flex items-center gap-2 text-red-600 text-[10px] uppercase font-bold tracking-widest hover:gap-3 transition-all">
-                                        Explore Lab <MoveRight className="w-3 h-3" />
-                                    </Link>
-                                </div>
                             </div>
 
                             {/* Services Grid */}
@@ -172,7 +164,6 @@ const Navbar = () => {
                                 ['Home', '/'],
                                 ['About Us', '/about'],
                                 ['Centers of Excellence', '/services'],
-                                ['Infrastructure', '/infrastructure'],
                                 ['Patient Guide', '/patient-guide'],
                                 ['Find a Doctor', '/doctors'],
                                 ['Contact Us', '/contact']
