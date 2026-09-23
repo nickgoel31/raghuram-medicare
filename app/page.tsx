@@ -2,9 +2,154 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowRight, ChevronLeft, ChevronRight, X as CloseIcon } from 'lucide-react'
+import { ArrowRight, ChevronLeft, ChevronRight, X as CloseIcon, Calendar, Clock, User, CheckCircle2, Sparkles, BookOpen } from 'lucide-react'
 import { doctors, hospital, testimonials as realTestimonials, services as realServices } from '@/lib/data'
 import { BlurReveal } from '@/components/ui/blur-reveal'
+
+interface BlogPost {
+  id: string
+  title: string
+  category: string
+  readTime: string
+  date: string
+  author: string
+  authorRole: string
+  authorPhoto: string
+  image: string
+  excerpt: string
+  highlights: string[]
+  content: {
+    heading: string
+    paragraphs: string[]
+  }[]
+  doctorHref: string
+}
+
+const blogPosts: BlogPost[] = [
+  {
+    id: 'asthma-pollution-guide',
+    title: 'Managing Chronic Asthma, Allergies & Air Pollution in Delhi-NCR',
+    category: 'Pulmonology & Chest Care',
+    date: 'Feb 12, 2026',
+    readTime: '4 min read',
+    author: 'Prof. (Dr.) Mohan Bandhu Gupta',
+    authorRole: 'Chest Physician & Pulmonologist (MD, FCCS)',
+    authorPhoto: '/doctor-bandhu.jpg',
+    image: '/blog-1.jpg',
+    excerpt: 'Essential clinical guidance and preventative protocols for managing seasonal cough, allergic bronchitis, and asthma flare-ups in Ghaziabad’s urban climate.',
+    highlights: [
+      'Identifying common allergens like particulate matter (PM2.5), dust mites & seasonal pollen',
+      'The critical role of regular computerized PFT (Spirometry) in monitoring airway resistance',
+      'Proper inhaler & spacer techniques to maximize bronchodilator delivery to the lungs',
+      'When acute chest tightness or wheezing requires immediate nebulization & clinical support',
+    ],
+    content: [
+      {
+        heading: '1. Why NCR Air Quality Aggravates Respiratory Conditions',
+        paragraphs: [
+          'Air quality indices across Ghaziabad and Delhi-NCR frequently reach severe levels during seasonal transitions, trapping micro-pollutants and industrial particulates close to the ground. For individuals with hyper-reactive airways, inhaling these fine particles triggers acute bronchospasms, mucosal inflammation, and debilitating nocturnal coughing fits.',
+          'Rather than relying solely on over-the-counter cough syrups that merely suppress symptoms, a structured pulmonary evaluation helps identify the root inflammatory triggers and stabilizes baseline airway caliber.',
+        ],
+      },
+      {
+        heading: '2. Preventative Protocols for Asthmatic and Allergic Patients',
+        paragraphs: [
+          'Maintaining optimal inhaler technique is the cornerstone of long-term asthma and COPD control. Preventive controller inhalers (inhaled corticosteroids) should never be stopped abruptly without clinical consultation, even during symptom-free intervals.',
+          'Additionally, high-efficiency particulate air (HEPA) filters at home, saline nasal rinses after outdoor exposure, and wearing well-fitted N95 masks during high-pollution hours provide significant protective barriers against airway hyper-responsiveness.',
+        ],
+      },
+      {
+        heading: '3. When to Seek Specialized Pulmonology Care',
+        paragraphs: [
+          'If you experience persistent cough lasting beyond 3 weeks, morning breathlessness, chest tightness during mild exertion, or reliance on rescue inhalers more than twice a week, schedule a computerized PFT (spirometry) test with Prof. (Dr.) Mohan Bandhu Gupta at Raghuram Medicare.',
+        ],
+      },
+    ],
+    doctorHref: '/appointment',
+  },
+  {
+    id: 'safe-motherhood-antenatal-guide',
+    title: 'Safe Motherhood: Essential Guide to Antenatal Care, Nutrition & Infertility',
+    category: "Women's Health & Gynaecology",
+    date: 'Jan 28, 2026',
+    readTime: '5 min read',
+    author: 'Dr. Shubhra Gupta',
+    authorRole: 'Senior Gynaecologist & Infertility Specialist (DGO, DMCH)',
+    authorPhoto: '/doctor-2.jpeg',
+    image: '/blog-2.jpg',
+    excerpt: 'A structured clinical overview for expectant mothers on essential antenatal screenings, dietary care, safe normal delivery preparation, and modern fertility support.',
+    highlights: [
+      'Trimester-by-trimester ultrasound monitoring and anomaly screenings',
+      'Managing gestational diabetes, thyroid imbalances, and pregnancy-induced hypertension',
+      'Nutritional balance: Iron, folic acid, calcium, and optimal maternal weight gain',
+      'Modern diagnostic evaluations for couples navigating infertility (Baanjhpan clinic)',
+    ],
+    content: [
+      {
+        heading: '1. The Importance of Early & Regular Antenatal Visits',
+        paragraphs: [
+          'The journey of safe motherhood begins before conception and requires meticulous clinical monitoring throughout each trimester. Regular antenatal visits allow your gynaecologist to monitor fetal heart tones, track amniotic fluid levels, evaluate placental maturity, and detect potential complications like pre-eclampsia early.',
+          'At Raghuram Medicare, Dr. Shubhra Gupta provides compassionate, personalized prenatal counseling to ensure both mother and baby remain healthy and confident every step toward delivery.',
+        ],
+      },
+      {
+        heading: '2. Preparing for Normal Delivery & High-Risk Management',
+        paragraphs: [
+          'Every pregnancy is unique. While our clinical goal prioritizes safe normal deliveries through pelvic conditioning and careful labor monitoring, high-risk factors like gestational hypertension or previous C-sections require prompt, well-equipped surgical infrastructure.',
+          'Patients have access to private, comfortable labor facilities and 24×7 emergency maternity support for round-the-clock peace of mind.',
+        ],
+      },
+      {
+        heading: '3. Compassionate Infertility (Baanjhpan) Support',
+        paragraphs: [
+          'Conception difficulties affect millions of couples and often stem from treatable hormonal imbalances, PCOS/PCOD, tubal blockages, or male-factor parameters. Dedicated fertility evaluation at our specialized clinic provides scientific, step-by-step diagnostic clarity and effective treatment plans.',
+        ],
+      },
+    ],
+    doctorHref: '/appointment',
+  },
+  {
+    id: 'computerized-pft-spirometry-importance',
+    title: 'Why Computerized PFT (Spirometry) is Vital for Early Lung Disease Detection',
+    category: 'Diagnostic Pulmonology',
+    date: 'Jan 15, 2026',
+    readTime: '3 min read',
+    author: 'Prof. (Dr.) Mohan Bandhu Gupta',
+    authorRole: 'Chest Physician & Pulmonologist (MD, FCCS)',
+    authorPhoto: '/doctor-bandhu.jpg',
+    image: '/blog-3.jpg',
+    excerpt: 'How a quick, painless 10-minute computerized lung function test identifies asthma, COPD, and smoker’s cough before permanent damage develops.',
+    highlights: [
+      'Painless 10-minute non-invasive test measuring FEV1 and FVC airflow parameters',
+      'Differentiating between obstructive airway diseases (Asthma/COPD) and restrictive lung conditions',
+      'Evaluating pre- and post-bronchodilator reversibility for precision medication dosing',
+      'Vital for post-COVID lung assessment and individuals with chronic workplace dust exposure',
+    ],
+    content: [
+      {
+        heading: '1. What Exactly is a Computerized PFT Test?',
+        paragraphs: [
+          'Pulmonary Function Testing (PFT) via computerized spirometry is the gold standard diagnostic tool used to measure lung volumes, airflow velocity, and airway resistance. The test is non-invasive, takes approximately 10 to 15 minutes, and provides immediate objective graphs of respiratory health.',
+          'By analyzing how fast and how much air you can exhale, Prof. (Dr.) Mohan Bandhu can precisely grade the severity of any bronchial narrowing.',
+        ],
+      },
+      {
+        heading: '2. Who Should Get a Computerized PFT Done?',
+        paragraphs: [
+          'Anyone experiencing breathlessness on stairs, persistent morning wheeze, chronic smoker’s cough, seasonal chest heaviness, or occupational exposure to chemical fumes should undergo periodic spirometry.',
+          'Early detection enables therapeutic interventions that halt disease progression, prevent irreversible lung remodeling, and preserve active lifestyle quality.',
+        ],
+      },
+      {
+        heading: '3. Precision Respiratory Care at Raghuram Medicare',
+        paragraphs: [
+          'Our center in Patel Nagar 3rd, Ghaziabad is equipped with modern computerized spirometry and diagnostic bronchoscopy systems, offering same-day testing, expert report interpretation, and tailored treatment regimes.',
+        ],
+      },
+    ],
+    doctorHref: '/appointment',
+  },
+]
 
 const slides = [
   {
@@ -150,6 +295,7 @@ export default function Home() {
   const [isPaused, setIsPaused] = useState(false)
   const [activeSpecialtyIndex, setActiveSpecialtyIndex] = useState(0)
   const [activeImpactIndex, setActiveImpactIndex] = useState(0)
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null)
 
   // Auto slide rotation every 6 seconds unless paused on hover
   useEffect(() => {
@@ -159,6 +305,29 @@ export default function Home() {
     }, 6000)
     return () => clearInterval(interval)
   }, [isPaused])
+
+  // Close modal with Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedPost(null)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
+  // Lock body scroll when popup is open
+  useEffect(() => {
+    if (selectedPost) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [selectedPost])
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length)
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
@@ -901,129 +1070,240 @@ export default function Home() {
           <BlurReveal delay={0} yOffset={24} className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 lg:mb-20">
             <div className="max-w-2xl">
               <span className="text-[#187597] text-xs font-bold tracking-[0.2em] uppercase block mb-3">
-                + BLOG
+                + CLINICAL INSIGHTS &amp; BLOG
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-[#0f172a] leading-[1.15] tracking-tight">
-                Explore Expert Insights for a<br className="hidden sm:inline" /> Healthier, Happier Life
+                Explore Expert Insights from<br className="hidden sm:inline" /> Our Senior Consultants
               </h2>
             </div>
             <p className="text-slate-500 text-sm sm:text-[15px] leading-relaxed max-w-md">
-              Discover expert health insights, wellness advice, and medical updates to help you make informed decisions and live a healthier life every day.
+              Evidence-based health advice, pulmonary diagnostics, and safe motherhood guidance written directly by Prof. (Dr.) Mohan Bandhu Gupta and Dr. Shubhra Gupta.
             </p>
           </BlurReveal>
 
           {/* 3-Column Blog Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 items-stretch">
-            
-            {/* Post 1 */}
-            <BlurReveal delay={100} yOffset={32}>
-              <div className="flex flex-col justify-between group h-full">
-                <div>
-                  <div className="relative rounded-3xl overflow-hidden aspect-[4/3] w-full mb-6 bg-slate-100 shadow-xs">
-                    <img
-                      src="/blog-1.jpg"
-                      alt="5 Daily Habits for a Healthier Heart"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+            {blogPosts.map((post, idx) => (
+              <BlurReveal key={post.id} delay={100 + idx * 120} yOffset={32}>
+                <div 
+                  onClick={() => setSelectedPost(post)}
+                  className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-100 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer h-full border-t-4 border-t-transparent hover:border-t-[#187597]"
+                >
+                  <div>
+                    {/* Hero Thumbnail */}
+                    <div className="relative rounded-2xl overflow-hidden aspect-[4/3] w-full mb-5 bg-slate-100 shadow-2xs">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3 bg-[#0e3c4e]/85 backdrop-blur-xs text-white text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
+                        {post.category}
+                      </div>
+                    </div>
+
+                    {/* Author & Read Time Pill Row */}
+                    <div className="flex items-center gap-2 mb-3">
+                      <img
+                        src={post.authorPhoto}
+                        alt={post.author}
+                        className="w-6 h-6 rounded-full object-cover object-top border border-[#187597]/30"
+                      />
+                      <span className="text-xs font-semibold text-slate-700 truncate">
+                        {post.author}
+                      </span>
+                      <span className="text-slate-300">•</span>
+                      <span className="text-[11px] text-slate-400 font-medium whitespace-nowrap">
+                        {post.readTime}
+                      </span>
+                    </div>
+
+                    {/* Post Title */}
+                    <h3 className="text-lg sm:text-xl font-bold text-[#0f172a] group-hover:text-[#187597] leading-snug tracking-tight mb-3 transition-colors">
+                      {post.title}
+                    </h3>
+
+                    {/* Excerpt */}
+                    <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
+                      {post.excerpt}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-[#187597] leading-snug tracking-tight mb-3 group-hover:underline cursor-pointer">
-                    5 Daily Habits for a Healthier Heart you deserve.
-                  </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-6 font-normal">
-                    Adopt simple daily habits like balanced eating, regular exercise, and stress control to strengthen your heart and boost longevity.
-                  </p>
-                </div>
 
-                {/* Bottom Read More & Date */}
-                <div className="flex items-center justify-between pt-2">
-                  <Link
-                    href="/services"
-                    className="inline-flex items-center gap-2 border border-slate-200 pl-4 pr-1.5 py-1.5 rounded-full text-xs font-semibold text-[#187597] hover:bg-slate-50 transition-colors shadow-2xs"
-                  >
-                    <span>Read More</span>
-                    <span className="w-6 h-6 rounded-full bg-[#187597] text-white flex items-center justify-center">
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </Link>
-                  <span className="text-xs text-slate-400 font-medium">Jan 25, 2025</span>
-                </div>
-              </div>
-            </BlurReveal>
-
-            {/* Post 2 */}
-            <BlurReveal delay={220} yOffset={32}>
-              <div className="flex flex-col justify-between group h-full">
-                <div>
-                  <div className="relative rounded-3xl overflow-hidden aspect-[4/3] w-full mb-6 bg-slate-100 shadow-xs">
-                    <img
-                      src="/blog-2.jpg"
-                      alt="Top Benefits of Regular Health Checkups"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                  {/* Bottom Action Bar */}
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100/80">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        setSelectedPost(post)
+                      }}
+                      className="inline-flex items-center gap-2 bg-[#f2f8fa] hover:bg-[#187597] text-[#187597] hover:text-white pl-4 pr-1.5 py-1.5 rounded-full text-xs font-semibold transition-colors duration-200"
+                    >
+                      <span>Read Article</span>
+                      <span className="w-6 h-6 rounded-full bg-[#187597] group-hover:bg-white text-white group-hover:text-[#187597] flex items-center justify-center transition-colors">
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </span>
+                    </button>
+                    <span className="text-[11px] text-slate-400 font-medium">{post.date}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#187597] leading-snug tracking-tight mb-3 group-hover:underline cursor-pointer">
-                    Top Benefits of Regular Health Checkups.
-                  </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-6 font-normal">
-                    Discover how routine health checkups help detect issues early, prevent serious diseases, and promote long-term physical and mental wellness.
-                  </p>
                 </div>
-
-                {/* Bottom Read More & Date */}
-                <div className="flex items-center justify-between pt-2">
-                  <Link
-                    href="/services"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#187597] hover:gap-3 transition-all"
-                  >
-                    <span>Read More</span>
-                    <span className="w-7 h-7 rounded-full border border-[#187597] flex items-center justify-center text-[#187597]">
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </Link>
-                  <span className="text-xs text-slate-400 font-medium">Jan 25, 2025</span>
-                </div>
-              </div>
-            </BlurReveal>
-
-            {/* Post 3 */}
-            <BlurReveal delay={340} yOffset={32}>
-              <div className="flex flex-col justify-between group h-full">
-                <div>
-                  <div className="relative rounded-3xl overflow-hidden aspect-[4/3] w-full mb-6 bg-slate-100 shadow-xs">
-                    <img
-                      src="/blog-3.jpg"
-                      alt="The Link Between Stress & Physical Health"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#187597] leading-snug tracking-tight mb-3 group-hover:underline cursor-pointer">
-                    The Link Between Stress & Physical Health.
-                  </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-6 font-normal">
-                    Understand how unmanaged stress affects your body and why regular health checkups are vital for early detection and prevention.
-                  </p>
-                </div>
-
-                {/* Bottom Read More & Date */}
-                <div className="flex items-center justify-between pt-2">
-                  <Link
-                    href="/services"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#187597] hover:gap-3 transition-all"
-                  >
-                    <span>Read More</span>
-                    <span className="w-7 h-7 rounded-full border border-[#187597] flex items-center justify-center text-[#187597]">
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </Link>
-                  <span className="text-xs text-slate-400 font-medium">Jan 25, 2025</span>
-                </div>
-              </div>
-            </BlurReveal>
-
+              </BlurReveal>
+            ))}
           </div>
 
         </div>
       </section>
+
+      {/* 7. INTERACTIVE READING POPUP MODAL */}
+      {selectedPost && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-slate-950/70 backdrop-blur-md overflow-y-auto animate-fade-in"
+          onClick={() => setSelectedPost(null)}
+        >
+          <div 
+            className="relative w-full max-w-3xl bg-white rounded-3xl sm:rounded-[32px] shadow-2xl overflow-hidden flex flex-col max-h-[90vh] my-auto border border-gray-100"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 sm:px-8 py-4 border-b border-gray-100 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#187597]" />
+                <span className="text-xs font-bold text-[#187597] uppercase tracking-wider">
+                  {selectedPost.category}
+                </span>
+              </div>
+              <button
+                onClick={() => setSelectedPost(null)}
+                aria-label="Close modal"
+                className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors cursor-pointer"
+              >
+                <CloseIcon className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Modal Scrollable Body */}
+            <div className="p-6 sm:p-8 overflow-y-auto space-y-6">
+              {/* Title */}
+              <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#0f172a] leading-tight tracking-tight">
+                {selectedPost.title}
+              </h2>
+
+              {/* Author & Meta Strip */}
+              <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-[#f2f8fa] border border-[#e2eff4]">
+                <div className="flex items-center gap-3">
+                  <img
+                    src={selectedPost.authorPhoto}
+                    alt={selectedPost.author}
+                    className="w-12 h-12 rounded-full object-cover object-top border-2 border-white shadow-xs"
+                  />
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 leading-tight">
+                      {selectedPost.author}
+                    </h4>
+                    <span className="text-xs text-slate-500 font-medium">
+                      {selectedPost.authorRole}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 text-xs text-slate-500">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5 text-[#187597]" />
+                    {selectedPost.date}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-[#187597]" />
+                    {selectedPost.readTime}
+                  </span>
+                </div>
+              </div>
+
+              {/* Hero Image */}
+              <div className="relative rounded-2xl overflow-hidden aspect-[16/9] w-full bg-slate-100 shadow-xs">
+                <img
+                  src={selectedPost.image}
+                  alt={selectedPost.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Key Takeaways Callout */}
+              <div className="p-5 sm:p-6 rounded-2xl bg-[#0e3c4e] text-white space-y-3">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#38bdf8] uppercase tracking-wider">
+                  <Sparkles className="w-4 h-4" />
+                  Key Clinical Highlights
+                </div>
+                <ul className="space-y-2 text-xs sm:text-sm text-white/90">
+                  {selectedPost.highlights.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-[#38bdf8] shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Formatted Article Content */}
+              <div className="space-y-6 pt-2 text-slate-700">
+                {selectedPost.content.map((sec, i) => (
+                  <div key={i} className="space-y-3">
+                    <h3 className="text-lg sm:text-xl font-bold text-[#0f172a] tracking-tight">
+                      {sec.heading}
+                    </h3>
+                    {sec.paragraphs.map((p, pIdx) => (
+                      <p key={pIdx} className="text-sm sm:text-base leading-relaxed text-slate-600">
+                        {p}
+                      </p>
+                    ))}
+                  </div>
+                ))}
+              </div>
+
+              {/* Doctor Consultation Callout Banner */}
+              <div className="p-6 rounded-2xl bg-[#f2f8fa] border border-[#e2eff4] flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3.5">
+                  <img
+                    src={selectedPost.authorPhoto}
+                    alt={selectedPost.author}
+                    className="w-12 h-12 rounded-2xl object-cover object-top border-2 border-white shadow-xs shrink-0"
+                  />
+                  <div>
+                    <h4 className="text-sm font-bold text-[#0f172a]">
+                      Consult with {selectedPost.author}
+                    </h4>
+                    <p className="text-xs text-slate-500">
+                      Available for OPD consultations at Patel Nagar, Ghaziabad.
+                    </p>
+                  </div>
+                </div>
+
+                <Link
+                  href="/appointment"
+                  onClick={() => setSelectedPost(null)}
+                  className="shrink-0 bg-[#187597] hover:bg-[#14607c] text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide shadow-md transition-all active:scale-95 flex items-center gap-2"
+                >
+                  <span>Book Consultation</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+            </div>
+
+            {/* Modal Bottom Sticky Footer */}
+            <div className="sticky bottom-0 z-20 bg-slate-50 px-6 sm:px-8 py-3.5 border-t border-gray-100 flex items-center justify-between">
+              <span className="text-xs text-slate-500">
+                Raghuram Medicare • Medical Knowledge Series
+              </span>
+              <button
+                onClick={() => setSelectedPost(null)}
+                className="px-5 py-2 rounded-full border border-slate-300 hover:bg-white text-slate-700 text-xs font-semibold transition-colors cursor-pointer"
+              >
+                Close Article
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   )
 }
