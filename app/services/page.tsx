@@ -1,138 +1,254 @@
 'use client'
 
+import React from 'react'
 import Link from 'next/link'
+import { ArrowRight, Activity, Stethoscope, Heart, Baby, CheckCircle2 } from 'lucide-react'
 import { hospital, doctors, services } from '@/lib/data'
 
-export default function Services() {
+export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-700">
-      {/* HERO */}
-      <section className="relative pt-40 pb-24 px-6 lg:px-10 bg-gray-900 text-center overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute right-0 top-0 w-[800px] h-[800px] bg-red-600/8 rounded-full blur-[150px]" />
+    <div className="min-h-screen bg-white text-slate-700">
+      
+      {/* 1. HERO BANNER */}
+      <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[#0c2f3d] via-[#10485e] to-[#145a75] text-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-20">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#38bdf8] rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#47b5cb] rounded-full blur-3xl" />
         </div>
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="text-red-400 text-[10px] font-bold tracking-[0.25em] uppercase">Departments & Specialties</span>
+
+        <div className="max-w-7xl mx-auto relative z-10 text-center max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#38bdf8] text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#38bdf8] animate-pulse" />
+            <span>Departments &amp; Specialties</span>
           </div>
-          <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-6xl font-medium text-white leading-[1.1]">
-            Centers of<br /><span className="text-red-500">Hospital Excellence</span>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15] mb-6">
+            Centers of Medical &amp;<br />
+            <span className="text-[#38bdf8]">Clinical Excellence</span>
           </h1>
-          <p className="text-white/60 text-lg mt-6 leading-relaxed max-w-xl mx-auto">
-            Comprehensive hospital-grade services provided by our leading specialists.
+          
+          <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Providing comprehensive chest &amp; pulmonary medicine, gynaecological surgery, safe delivery, and dedicated infertility care in Patel Nagar, Ghaziabad.
           </p>
         </div>
       </section>
 
-      {/* SERVICES GRID */}
-      <section className="py-24 px-6 lg:px-10 bg-gray-50">
+      {/* 2. SERVICES LISTING */}
+      <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-xs font-bold tracking-[0.2em] text-[#187597] uppercase flex items-center justify-center gap-1.5 mb-3">
+              <span className="text-sm">+</span> SPECIALIZED DEPARTMENTS
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0f172a] tracking-tight leading-[1.2]">
+              Specialist Healthcare Tailored to You
+            </h2>
+            <p className="text-slate-500 text-sm sm:text-base mt-3">
+              Comprehensive treatments led directly by senior professors and consultants.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
             {services.map((s) => (
-              <Link key={s.slug} href={`/services/${s.slug}`} className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:border-red-200 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden block">
-                {/* Card Header */}
-                <div className="p-8 pb-6 bg-gray-50 border-b border-gray-100 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/5 rounded-bl-full -mr-16 -mt-16 group-hover:bg-red-600/10 transition-colors duration-500" />
-                  <div className="inline-block bg-red-600 rounded-lg px-2.5 py-1 text-[10px] font-bold tracking-[0.15em] uppercase text-white mb-4 relative z-10">
-                    {s.tag}
-                  </div>
-                  <div className="flex items-start justify-between relative z-10">
+              <div
+                key={s.slug}
+                className="group bg-white rounded-3xl border border-gray-100 p-8 sm:p-10 shadow-sm hover:shadow-xl hover:border-[#187597]/30 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-4 mb-6">
                     <div>
-                      <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-gray-900 leading-tight group-hover:text-red-600 transition-colors">{s.title}</h2>
-                      <p className="text-gray-500 text-sm mt-1">{s.tagline}</p>
+                      <span className="inline-block bg-[#187597]/10 text-[#187597] text-xs font-bold tracking-wider uppercase px-3.5 py-1 rounded-full mb-3">
+                        {s.tag}
+                      </span>
+                      <h3 className="text-2xl font-bold text-[#0f172a] tracking-tight group-hover:text-[#187597] transition-colors">
+                        {s.title}
+                      </h3>
+                      <p className="text-xs font-semibold text-slate-400 mt-1">
+                        {s.tagline}
+                      </p>
                     </div>
-                    <span className="text-4xl shrink-0 ml-4 opacity-80">{s.icon}</span>
+                    <span className="text-4xl p-3 rounded-2xl bg-[#f2f8fa] border border-[#e2eff4] shrink-0">
+                      {s.icon}
+                    </span>
                   </div>
-                </div>
-                {/* Card Body */}
-                <div className="p-8 pt-6">
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6">{s.heroDesc}</p>
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {s.conditions.slice(0, 3).map(c => (
-                      <span key={c} className="text-[10px] bg-red-50 text-red-600 border border-red-100 px-2.5 py-1 rounded-full">{c}</span>
+
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                    {s.heroDesc}
+                  </p>
+
+                  <div className="space-y-4 mb-8">
+                    <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                      Key Highlights &amp; Treatments:
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-2.5">
+                      {s.features.slice(0, 4).map((f) => (
+                        <div key={f} className="flex items-center gap-2 text-xs text-slate-600">
+                          <CheckCircle2 className="w-4 h-4 text-[#187597] shrink-0" />
+                          <span>{f}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 pt-2 border-t border-gray-100 mb-6">
+                    {s.conditions.map((c) => (
+                      <span
+                        key={c}
+                        className="px-3 py-1 rounded-xl bg-[#f2f8fa] text-xs font-medium text-slate-600"
+                      >
+                        {c}
+                      </span>
                     ))}
-                    {s.conditions.length > 3 && (
-                      <span className="text-[10px] text-gray-400 px-2.5 py-1">+{s.conditions.length - 3} more</span>
-                    )}
-                  </div>
-                  <div className="text-red-600 text-xs font-bold tracking-[0.15em] uppercase flex items-center gap-2 group-hover:gap-3 transition-all">
-                    View Full Details <span>→</span>
                   </div>
                 </div>
-              </Link>
+
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+                  <Link
+                    href={`/services/${s.slug}`}
+                    className="text-xs font-bold text-[#187597] hover:underline uppercase tracking-wider flex items-center gap-1.5"
+                  >
+                    <span>View Service Details</span>
+                    <span>→</span>
+                  </Link>
+                  <Link
+                    href="/appointment"
+                    className="group/btn inline-flex items-center gap-2.5 bg-[#187597] hover:bg-[#14607c] text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide transition-all shadow-xs active:scale-95"
+                  >
+                    <span>Book Consult</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* DR STRIP */}
-      <section className="py-16 px-6 lg:px-10 bg-gray-100 border-y border-gray-200">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-10">
-          {doctors.map((doc) => (
-            <div key={doc.id} className="flex flex-col sm:flex-row items-center gap-6 bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
-              <img src={doc.photo} alt={doc.name} className="w-20 h-20 rounded-2xl object-cover shrink-0 shadow-sm" />
-              <div className="flex-1 text-center sm:text-left">
-                <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-red-600 mb-1">{doc.designation}</div>
-                <div className="font-[family-name:var(--font-playfair)] text-2xl text-gray-900 font-medium">{doc.name}</div>
-                <div className="text-gray-500 text-xs mt-1">{doc.qualifications}</div>
-              </div>
-              <Link href="/doctors" className="shrink-0 mt-4 sm:mt-0 bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-[10px] font-bold tracking-[0.15em] uppercase transition-all duration-300 rounded-lg shadow-sm shadow-red-600/15">
-                Profile
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* TECH */}
-      <section className="py-24 px-6 lg:px-10 bg-gray-900">
+      {/* 3. DIAGNOSTIC INFRASTRUCTURE */}
+      <section className="py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-slate-50 border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-5">
-              <div className="w-8 h-px bg-red-500" />
-              <span className="text-red-400 text-[10px] font-bold tracking-[0.25em] uppercase">Diagnostic Facilities</span>
-              <div className="w-8 h-px bg-red-500" />
-            </div>
-            <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-medium text-white">
-              Advanced <span className="text-red-500">Equipment</span>
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-xs font-bold tracking-[0.2em] text-[#187597] uppercase flex items-center justify-center gap-1.5 mb-3">
+              <span className="text-sm">+</span> DIAGNOSTIC FACILITIES
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#0f172a] tracking-tight leading-[1.2]">
+              Modern Diagnostic &amp; Clinical Equipment
             </h2>
+            <p className="text-slate-500 text-sm sm:text-base mt-3">
+              Enabling precise evaluations, rapid diagnosis, and targeted therapeutic management.
+            </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { num: '01', title: 'Digital Chest Imaging', desc: 'High-resolution digital X-rays and access to HRCT chest CT scanning for precise characterisation of all pulmonary conditions including ILD, bronchiectasis, and tumours.' },
-              { num: '02', title: 'Spirometry & PFT', desc: 'State-of-the-art spirometry systems for complete pulmonary function profiling — pre and post-bronchodilator testing, DLCO measurement, and bronchial challenge testing.' },
-              { num: '03', title: 'Oxygen & Nebulization', desc: 'Modern oxygen delivery systems, continuous pulse oximetry monitoring, and nebulisation therapy for acute and chronic respiratory management.' },
-              { num: '04', title: 'GeneXpert / CBNAAT', desc: 'Rapid molecular TB testing for same-day diagnosis of TB and drug resistance — critical for early, appropriate treatment in Ghaziabad\'s TB-endemic setting.' },
-            ].map(t => (
-              <div key={t.num} className="bg-white/5 border border-white/10 rounded-2xl p-10 hover:bg-white/10 hover:border-red-500/40 transition-all duration-500">
-                <div className="float-right font-[family-name:var(--font-playfair)] text-6xl font-light text-red-600/15 leading-none -mt-2">{t.num}</div>
-                <div className="clear-right">
-                  <h3 className="font-[family-name:var(--font-playfair)] text-2xl font-medium text-white mb-3 tracking-wide">{t.title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{t.desc}</p>
+              {
+                num: '01',
+                title: 'Computerized PFT (Spirometry)',
+                desc: 'Complete pulmonary function profiling with pre- and post-bronchodilator analysis for asthma & COPD.',
+              },
+              {
+                num: '02',
+                title: 'Diagnostic Bronchoscopy',
+                desc: 'Minimally invasive camera evaluation of airways, foreign body retrieval, and bronchial biopsy.',
+              },
+              {
+                num: '03',
+                title: 'Nebulization & Oxygen Care',
+                desc: 'Rapid medical response for acute asthmatic attacks, chronic bronchitis, and severe breathlessness.',
+              },
+              {
+                num: '04',
+                title: 'Fetal & Antenatal Monitoring',
+                desc: 'Continuous fetal heart monitoring, high-risk ultrasound guidance, and safe delivery support.',
+              },
+            ].map((d) => (
+              <div
+                key={d.num}
+                className="bg-white rounded-3xl p-7 border border-gray-100 shadow-sm hover:shadow-md transition-all space-y-4 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="text-3xl font-bold text-[#187597]/30 mb-2">{d.num}</div>
+                  <h3 className="text-lg font-bold text-[#0f172a] mb-2">{d.title}</h3>
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{d.desc}</p>
                 </div>
+                <div className="w-8 h-1 rounded-full bg-[#187597]/20" />
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. DOCTORS STRIP */}
+      <section className="py-20 lg:py-24 px-6 sm:px-8 lg:px-12 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+            {doctors.map((doc) => (
+              <div
+                key={doc.id}
+                className="bg-[#f2f8fa] border border-[#e2eff4] rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-xs"
+              >
+                <div className="w-20 h-24 sm:w-24 sm:h-28 rounded-2xl overflow-hidden shadow-sm shrink-0 bg-white border-2 border-white">
+                  <img
+                    src={doc.photo}
+                    alt={doc.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="flex-1 text-center sm:text-left space-y-1">
+                  <span className="text-[10px] font-bold tracking-widest text-[#187597] uppercase">
+                    {doc.designation}
+                  </span>
+                  <h3 className="text-xl font-bold text-[#0f172a]">{doc.name}</h3>
+                  <p className="text-xs text-slate-500">{doc.qualifications}</p>
+                  <p className="text-xs font-semibold text-[#187597] pt-1">
+                    Timings: {doc.timings}
+                  </p>
+                </div>
+                <Link
+                  href="/appointment"
+                  className="shrink-0 bg-[#187597] hover:bg-[#14607c] text-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all shadow-xs"
+                >
+                  Consult
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-32 px-6 lg:px-10 bg-gray-50 text-center">
-        <div className="max-w-xl mx-auto">
-          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-medium text-gray-900 mb-5 leading-[1.2]">
-            Ready to Breathe <span className="text-red-600">Better?</span>
+      {/* 5. CTA BANNER */}
+      <section className="py-20 lg:py-24 px-6 sm:px-8 lg:px-12 bg-[#145a75] text-white">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-[1.2]">
+            Need Specialist Medical Consultation?
           </h2>
-          <p className="text-gray-500 text-lg mb-8">Visit our specialists at Raghuram Medicare</p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/appointment" className="inline-block bg-red-600 hover:bg-red-700 text-white px-10 py-4 text-xs font-bold tracking-[0.15em] uppercase transition-all duration-300 rounded-lg shadow-lg shadow-red-600/20">
-              Book Consultation
+          <p className="text-white/80 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            Reach out to our clinical team at Patel Nagar, Ghaziabad for consultations, diagnostic tests, or second opinions.
+          </p>
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/appointment"
+              className="group inline-flex items-center gap-3 bg-white hover:bg-slate-100 text-[#145a75] pl-7 pr-2 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all shadow-md active:scale-95"
+            >
+              <span>Book Appointment</span>
+              <span className="w-8 h-8 rounded-full bg-[#187597] text-white flex items-center justify-center">
+                <ArrowRight className="w-4 h-4" />
+              </span>
             </Link>
-            <Link href="/contact" className="inline-block border border-gray-300 hover:border-red-600 text-gray-700 hover:text-red-600 px-10 py-4 text-xs font-medium tracking-[0.15em] uppercase transition-all duration-300 rounded-lg">
-              Contact Facility
+            <Link
+              href="/contact"
+              className="inline-flex items-center px-7 py-3 rounded-full border border-white/30 text-white hover:bg-white/10 text-sm font-semibold tracking-wide transition-colors"
+            >
+              Contact Clinic
             </Link>
           </div>
         </div>
       </section>
+
     </div>
   )
 }

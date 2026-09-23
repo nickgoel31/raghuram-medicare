@@ -28,7 +28,7 @@ export const doctors = [
         phone: '+91 9810747464',
         experience: 'Chest Physician',
         timings: '10:00 AM – 2:00 PM & 6:00 PM – 8:00 PM',
-        photo: 'https://www.shardahospital.org/uploads/doctor/doc_mohan-bandhu-gupta1.jpg',
+        photo: '/doctor-bandhu.jpg',
         bio: [
             'Dr. Mohan Bandhu Gupta is one of the most respected and experienced Chest Physicians in the Delhi-NCR region, with over two decades of dedicated service in respiratory medicine and pulmonology.',
             'He holds an MBBS and an MD in Respiratory Medicine, along with a prestigious Fellowship in Fundamentals of Critical Care Support (FCCS) — a globally recognised qualification in critical care medicine.',

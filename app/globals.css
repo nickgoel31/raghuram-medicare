@@ -150,3 +150,42 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Hero Blur Reveal Animation */
+@keyframes heroBlurReveal {
+  0% {
+    opacity: 0;
+    filter: blur(14px);
+    transform: translateY(18px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-hero-blur-1 {
+  animation: heroBlurReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  will-change: opacity, filter, transform;
+}
+
+.animate-hero-blur-2 {
+  animation: heroBlurReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+  will-change: opacity, filter, transform;
+}
+
+.animate-hero-blur-3 {
+  animation: heroBlurReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+  will-change: opacity, filter, transform;
+}
+
+.animate-hero-blur-4 {
+  animation: heroBlurReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+  will-change: opacity, filter, transform;
+}
+
+.animate-hero-blur-5 {
+  animation: heroBlurReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
+  will-change: opacity, filter, transform;
+}
