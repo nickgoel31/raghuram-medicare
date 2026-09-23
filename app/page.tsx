@@ -198,31 +198,26 @@ export default function Home() {
             {/* Social Proof: Avatars & Tag */}
             <div 
               key={`tag-${currentSlide}`}
-              className="inline-flex items-center gap-3 mb-6 bg-white/15 backdrop-blur-md border border-white/25 rounded-full px-3.5 py-1.5 shadow-sm animate-hero-blur-1"
+              className="inline-flex items-center gap-2.5 sm:gap-3 mb-5 sm:mb-6 bg-white/15 backdrop-blur-md border border-white/25 rounded-full px-3 sm:px-3.5 py-1 sm:py-1.5 shadow-sm animate-hero-blur-1 max-w-full"
             >
-              <div className="flex -space-x-2">
+              <div className="flex -space-x-2 shrink-0">
                 <img
-                  className="inline-block h-7 w-7 rounded-full ring-2 ring-white object-cover"
+                  className="inline-block h-6 w-6 sm:h-7 sm:w-7 rounded-full ring-2 ring-white object-cover object-top"
+                  src="/doctor-bandhu.jpg"
+                  alt="Prof. Dr. Mohan Bandhu"
+                />
+                <img
+                  className="inline-block h-6 w-6 sm:h-7 sm:w-7 rounded-full ring-2 ring-white object-cover object-top"
+                  src="/doctor-2.jpeg"
+                  alt="Dr. Shubhra Gupta"
+                />
+                <img
+                  className="inline-block h-6 w-6 sm:h-7 sm:w-7 rounded-full ring-2 ring-white object-cover"
                   src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
-                  alt="Patient avatar"
-                />
-                <img
-                  className="inline-block h-7 w-7 rounded-full ring-2 ring-white object-cover"
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
-                  alt="Patient avatar"
-                />
-                <img
-                  className="inline-block h-7 w-7 rounded-full ring-2 ring-white object-cover"
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80"
-                  alt="Patient avatar"
-                />
-                <img
-                  className="inline-block h-7 w-7 rounded-full ring-2 ring-white object-cover"
-                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80"
-                  alt="Patient avatar"
+                  alt="Verified Patient"
                 />
               </div>
-              <span className="text-white text-xs sm:text-sm font-medium tracking-wide">
+              <span className="text-white text-[11px] sm:text-xs md:text-sm font-medium tracking-wide truncate">
                 {slides[currentSlide].tag}
               </span>
             </div>
@@ -230,7 +225,7 @@ export default function Home() {
             {/* Main Headline */}
             <h1 
               key={`headline-${currentSlide}`}
-              className="text-4xl sm:text-5xl lg:text-[58px] xl:text-[64px] font-bold text-white tracking-tight leading-[1.08] mb-8 min-h-[140px] sm:min-h-[170px] lg:min-h-[200px] flex items-center animate-hero-blur-2"
+              className="text-3xl sm:text-5xl lg:text-[56px] xl:text-[62px] font-bold text-white tracking-tight leading-[1.1] sm:leading-[1.08] mb-6 sm:mb-8 min-h-[110px] sm:min-h-[160px] lg:min-h-[190px] flex items-center animate-hero-blur-2"
             >
               {slides[currentSlide].headline}
             </h1>
@@ -238,14 +233,14 @@ export default function Home() {
             {/* Explore Services Pill Button */}
             <div 
               key={`cta-${currentSlide}`}
-              className="mb-10 animate-hero-blur-3"
+              className="mb-8 sm:mb-10 animate-hero-blur-3"
             >
               <Link
                 href={slides[currentSlide].btnHref}
-                className="group inline-flex items-center gap-4 bg-white text-slate-900 hover:bg-slate-50 pl-7 pr-2.5 py-2.5 rounded-full text-base font-semibold tracking-wide transition-all shadow-xl hover:shadow-2xl active:scale-95"
+                className="group inline-flex items-center gap-3 sm:gap-4 bg-white text-slate-900 hover:bg-slate-50 pl-6 sm:pl-7 pr-2 sm:pr-2.5 py-2 sm:py-2.5 rounded-full text-sm sm:text-base font-semibold tracking-wide transition-all shadow-xl hover:shadow-2xl active:scale-95"
               >
                 <span>{slides[currentSlide].btnText}</span>
-                <span className="w-9 h-9 rounded-full bg-[#187597] text-white flex items-center justify-center transition-transform group-hover:translate-x-0.5">
+                <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#187597] text-white flex items-center justify-center transition-transform group-hover:translate-x-0.5">
                   <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
@@ -253,14 +248,14 @@ export default function Home() {
           </div>
 
           {/* Bottom Row: Bottom-Left Narrative & Bottom-Right Glass Cards */}
-          <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 pt-6 mt-auto">
+          <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 sm:gap-8 pt-4 sm:pt-6 mt-auto">
             
             {/* Bottom Left: Feature Narrative */}
             <div 
               key={`sub-${currentSlide}`}
-              className="max-w-md text-white min-h-[85px] animate-hero-blur-4"
+              className="max-w-md text-white min-h-[70px] sm:min-h-[85px] animate-hero-blur-4"
             >
-              <h3 className="text-lg sm:text-xl font-bold mb-1.5 tracking-tight">
+              <h3 className="text-base sm:text-xl font-bold mb-1 sm:mb-1.5 tracking-tight">
                 {slides[currentSlide].subTitle}
               </h3>
               <p className="text-white/90 text-xs sm:text-sm leading-relaxed font-normal">
@@ -269,17 +264,17 @@ export default function Home() {
             </div>
 
             {/* Bottom Right: 2 Frosted Glass Widget Cards */}
-            <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 sm:gap-5 w-full lg:w-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex items-center gap-4 sm:gap-5 w-full lg:w-auto">
               
               {/* Card 1: Metric / Care Rate */}
               <div 
                 key={`stat-${currentSlide}`}
-                className="bg-white/20 backdrop-blur-xl border border-white/35 rounded-3xl p-6 shadow-2xl text-white max-w-[260px] flex-1 sm:flex-initial min-h-[155px] animate-hero-blur-4"
+                className="bg-white/20 backdrop-blur-xl border border-white/35 rounded-3xl p-5 sm:p-6 shadow-2xl text-white w-full sm:max-w-[260px] min-h-[140px] sm:min-h-[155px] animate-hero-blur-4"
               >
-                <div className="text-xs sm:text-sm font-medium text-white/90 mb-1.5">
+                <div className="text-xs sm:text-sm font-medium text-white/90 mb-1 sm:mb-1.5">
                   {slides[currentSlide].statLabel}
                 </div>
-                <div className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-1.5">
+                <div className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-1 sm:mb-1.5">
                   {slides[currentSlide].statValue}
                 </div>
                 <div className="text-[11px] sm:text-xs text-white/85 leading-relaxed font-normal">
@@ -290,34 +285,34 @@ export default function Home() {
               {/* Card 2: Interactive Pill Matrix */}
               <div 
                 key={`pills-${currentSlide}`}
-                className="bg-white/20 backdrop-blur-xl border border-white/35 rounded-3xl p-5 shadow-2xl flex flex-col gap-2.5 min-w-[210px] animate-hero-blur-5"
+                className="bg-white/20 backdrop-blur-xl border border-white/35 rounded-3xl p-4 sm:p-5 shadow-2xl flex flex-col gap-2 sm:gap-2.5 w-full sm:min-w-[210px] animate-hero-blur-5"
               >
                 {/* Row 1 */}
                 <div className="flex items-center gap-2">
-                  <div className="w-9 h-9 rounded-full border border-white/40 bg-white/10 flex items-center justify-center text-white text-xs">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/40 bg-white/10 flex items-center justify-center text-white text-xs">
                     <CloseIcon className="w-3.5 h-3.5 stroke-[1.75]" />
                   </div>
-                  <div className="px-5 py-2 rounded-full border border-white/40 bg-white/10 text-white text-xs font-medium tracking-wide">
+                  <div className="px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border border-white/40 bg-white/10 text-white text-xs font-medium tracking-wide">
                     {slides[currentSlide].pill1}
                   </div>
                 </div>
 
                 {/* Row 2 (Active Highlight Pill) */}
                 <div className="flex items-center gap-2">
-                  <div className="px-5 py-2 rounded-full bg-white text-[#187597] text-xs font-bold shadow-md tracking-wide">
+                  <div className="px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-white text-[#187597] text-xs font-bold shadow-md tracking-wide">
                     {slides[currentSlide].pill2}
                   </div>
-                  <div className="w-9 h-9 rounded-full border border-white/40 bg-white/10 flex items-center justify-center text-white text-xs">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/40 bg-white/10 flex items-center justify-center text-white text-xs">
                     <CloseIcon className="w-3.5 h-3.5 stroke-[1.75]" />
                   </div>
                 </div>
 
                 {/* Row 3 */}
                 <div className="flex items-center gap-2">
-                  <div className="w-9 h-9 rounded-full border border-white/40 bg-white/10 flex items-center justify-center text-white text-xs">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/40 bg-white/10 flex items-center justify-center text-white text-xs">
                     <CloseIcon className="w-3.5 h-3.5 stroke-[1.75]" />
                   </div>
-                  <div className="px-5 py-2 rounded-full border border-white/40 bg-white/10 text-white text-xs font-medium tracking-wide">
+                  <div className="px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border border-white/40 bg-white/10 text-white text-xs font-medium tracking-wide">
                     {slides[currentSlide].pill3}
                   </div>
                 </div>
@@ -773,126 +768,119 @@ export default function Home() {
               Real Stories, Real Healing — From<br className="hidden sm:inline" /> Our Community
             </h2>
             <p className="text-slate-500 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-              Providing patient-centered care through expert guidance, innovative solutions, and personalized support every step of the way.
+              Serving Patel Nagar, Ghaziabad, and Delhi-NCR with ethical, senior consultant-led medical care since 2003.
             </p>
           </BlurReveal>
 
           {/* 3-Card Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             
-            {/* Card 1: Friendly Staff Review */}
+            {/* Card 1: Gynaecology & Maternity Review (Dr. Shubhra Gupta) */}
             <BlurReveal delay={100} yOffset={32}>
-              <div className="bg-white rounded-3xl p-8 sm:p-9 border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[380px] h-full">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[380px] h-full">
                 <div>
-                  <h3 className="text-xl font-bold text-[#187597] tracking-tight mb-4">
-                    Friendly staff review
+                  <div className="flex items-center gap-2.5 mb-4">
+                    <img
+                      src="/doctor-2.jpeg"
+                      alt="Dr. Shubhra Gupta"
+                      className="w-8 h-8 rounded-full object-cover object-top border border-[#187597]/30"
+                    />
+                    <span className="text-[11px] font-bold text-[#187597] uppercase tracking-wider bg-[#f2f8fa] px-2.5 py-1 rounded-full">
+                      Dr. Shubhra Gupta
+                    </span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0f172a] tracking-tight mb-3">
+                    Compassionate Maternity &amp; Gynaecology Care
                   </h3>
-                  <p className="text-slate-600 text-[15px] sm:text-base leading-relaxed">
-                    The team made every step stress-free and supportive. I finally feel confident about my treatment.
+                  <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed">
+                    &ldquo;Dr. Shubhra Gupta is an awesome gynecologist. I had a very good experience and she was really helpful and compassionate throughout my treatment. Just go by her words and have faith — you will definitely get results.&rdquo;
                   </p>
                 </div>
 
                 {/* Card 1 Bottom: Avatar + Name + Socials */}
-                <div className="flex items-center justify-between pt-8 border-t border-gray-100/80">
-                  <div className="flex items-center gap-3.5">
-                    <img
-                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80"
-                      alt="Robert Fox"
-                      className="w-11 h-11 rounded-xl object-cover"
-                    />
+                <div className="flex items-center justify-between pt-6 mt-6 border-t border-gray-100/80">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[#187597] text-white flex items-center justify-center font-bold text-sm shadow-xs">
+                      DN
+                    </div>
                     <div>
-                      <h4 className="text-sm font-bold text-slate-900 leading-tight">Robert Fox</h4>
-                      <span className="text-xs text-slate-400 font-medium">Verified Patient</span>
+                      <h4 className="text-sm font-bold text-slate-900 leading-tight">Deepa Negi</h4>
+                      <span className="text-xs text-slate-400 font-medium">Verified Patient, Ghaziabad</span>
                     </div>
                   </div>
 
-                  {/* Social Badges */}
-                  <div className="flex items-center gap-1.5 text-slate-400">
-                    <div className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-[10px] font-bold hover:text-slate-800 hover:border-slate-400 transition-colors cursor-pointer">
-                      𝕏
-                    </div>
-                    <div className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-xs font-bold hover:text-slate-800 hover:border-slate-400 transition-colors cursor-pointer">
-                      f
-                    </div>
-                    <div className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-[10px] hover:text-slate-800 hover:border-slate-400 transition-colors cursor-pointer">
-                      ▶
-                    </div>
+                  <div className="flex items-center text-amber-400 text-xs">
+                    ★★★★★
                   </div>
                 </div>
               </div>
             </BlurReveal>
 
-            {/* Card 2: Featured Photo Card (Cody Fisher) */}
+            {/* Card 2: Featured Photo Card (Prof. Dr. Mohan Bandhu) */}
             <BlurReveal delay={220} yOffset={32}>
-              <div className="relative rounded-3xl overflow-hidden shadow-lg min-h-[380px] h-full bg-slate-800 flex flex-col justify-end group">
+              <div className="relative rounded-3xl overflow-hidden shadow-lg min-h-[380px] h-full bg-slate-900 flex flex-col justify-end group">
                 <img
-                  src="/testimonial-cody.jpg"
-                  alt="Cody Fisher"
-                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  src="/hero-slide-2.jpg"
+                  alt="Prof. (Dr.) Mohan Bandhu Gupta - Pulmonology Consultation"
+                  className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
                 {/* Gradient Overlay for Text Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#187597]/95 via-[#187597]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e3c4e]/95 via-[#0e3c4e]/60 to-transparent" />
 
                 {/* Card 2 Bottom Details */}
-                <div className="relative z-10 p-8 flex items-center justify-between text-white">
-                  <div>
-                    <h4 className="text-base font-bold text-white leading-tight">Cody Fisher</h4>
-                    <span className="text-xs text-white/80 font-medium">Pulmonology Patient</span>
+                <div className="relative z-10 p-6 sm:p-8 flex flex-col justify-end text-white space-y-2.5">
+                  <div className="inline-flex items-center gap-2 bg-[#38bdf8]/20 backdrop-blur-md border border-[#38bdf8]/40 text-[#38bdf8] text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full w-fit">
+                    Lead Pulmonologist
                   </div>
-
-                  {/* Translucent Glass Social Badges */}
-                  <div className="flex items-center gap-1.5 text-white">
-                    <div className="w-7 h-7 rounded-lg bg-white/20 backdrop-blur-xs border border-white/30 flex items-center justify-center text-[10px] font-bold hover:bg-white/30 transition-colors cursor-pointer">
-                      𝕏
-                    </div>
-                    <div className="w-7 h-7 rounded-lg bg-white/20 backdrop-blur-xs border border-white/30 flex items-center justify-center text-xs font-bold hover:bg-white/30 transition-colors cursor-pointer">
-                      f
-                    </div>
-                    <div className="w-7 h-7 rounded-lg bg-white/20 backdrop-blur-xs border border-white/30 flex items-center justify-center text-[10px] hover:bg-white/30 transition-colors cursor-pointer">
-                      ▶
-                    </div>
+                  <h4 className="text-lg sm:text-xl font-bold text-white leading-tight">
+                    Prof. (Dr.) Mohan Bandhu Gupta
+                  </h4>
+                  <p className="text-xs text-white/90 leading-relaxed font-normal">
+                    &ldquo;The doctor was really nice, attentive, and highly knowledgeable. I strongly recommend Raghuram Medicare for any respiratory, chest, or allergy-related issues.&rdquo;
+                  </p>
+                  <div className="text-[11px] text-[#38bdf8] font-semibold pt-1">
+                    — Rounak Gupta, Respiratory Patient
                   </div>
                 </div>
               </div>
             </BlurReveal>
 
-            {/* Card 3: Seamless Experience */}
+            {/* Card 3: Overall Hospital & Doctor Excellence (Parth Mukul Gupta) */}
             <BlurReveal delay={340} yOffset={32}>
-              <div className="bg-white rounded-3xl p-8 sm:p-9 border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[380px] h-full">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between min-h-[380px] h-full">
                 <div>
-                  <h3 className="text-xl font-bold text-[#187597] tracking-tight mb-4">
-                    Seamless experience
+                  <div className="flex items-center gap-2.5 mb-4">
+                    <img
+                      src="/doctor-bandhu.jpg"
+                      alt="Prof. Dr. Mohan Bandhu"
+                      className="w-8 h-8 rounded-full object-cover object-top border border-[#187597]/30"
+                    />
+                    <span className="text-[11px] font-bold text-[#187597] uppercase tracking-wider bg-[#f2f8fa] px-2.5 py-1 rounded-full">
+                      Clinical Excellence
+                    </span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0f172a] tracking-tight mb-3">
+                    Lifesaving Medical Dedication
                   </h3>
-                  <p className="text-slate-600 text-[15px] sm:text-base leading-relaxed">
-                    The team made every step stress-free and supportive. I finally feel confident about my treatment.
+                  <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed">
+                    &ldquo;The doctors at Raghuram Medicare are true lifesavers who work tirelessly for their patients. Their clinical precision and empathetic nature make this hospital the most trusted healthcare center in Patel Nagar.&rdquo;
                   </p>
                 </div>
 
                 {/* Card 3 Bottom: Avatar + Name + Socials */}
-                <div className="flex items-center justify-between pt-8 border-t border-gray-100/80">
-                  <div className="flex items-center gap-3.5">
-                    <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80"
-                      alt="Albert Flores"
-                      className="w-11 h-11 rounded-xl object-cover"
-                    />
+                <div className="flex items-center justify-between pt-6 mt-6 border-t border-gray-100/80">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[#187597] text-white flex items-center justify-center font-bold text-sm shadow-xs">
+                      PG
+                    </div>
                     <div>
-                      <h4 className="text-sm font-bold text-slate-900 leading-tight">Albert Flores</h4>
-                      <span className="text-xs text-slate-400 font-medium">Verified Patient</span>
+                      <h4 className="text-sm font-bold text-slate-900 leading-tight">Parth Mukul Gupta</h4>
+                      <span className="text-xs text-slate-400 font-medium">Verified Patient, Ghaziabad</span>
                     </div>
                   </div>
 
-                  {/* Social Badges */}
-                  <div className="flex items-center gap-1.5 text-slate-400">
-                    <div className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-[10px] font-bold hover:text-slate-800 hover:border-slate-400 transition-colors cursor-pointer">
-                      𝕏
-                    </div>
-                    <div className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-xs font-bold hover:text-slate-800 hover:border-slate-400 transition-colors cursor-pointer">
-                      f
-                    </div>
-                    <div className="w-7 h-7 rounded-lg border border-gray-200 flex items-center justify-center text-[10px] hover:text-slate-800 hover:border-slate-400 transition-colors cursor-pointer">
-                      ▶
-                    </div>
+                  <div className="flex items-center text-amber-400 text-xs">
+                    ★★★★★
                   </div>
                 </div>
               </div>
